@@ -3,7 +3,7 @@ import { GoogleMap, LoadScript, DirectionsService, DirectionsRenderer, Marker, I
 import './App.css';
 
 const AEROPORTO_METRO = { lat: 41.236893482066556, lng: -8.670332547049686 }; // Aeroporto Metro Station entrance
-const FORMOSA = { lat: 41.1486, lng: -8.6062 }; // Rua Formosa 414
+const FORMOSA = { lat: 41.14911717744368, lng: -8.608911951364261 }; // Rua Formosa 414
 
 const containerStyle = {
   width: '100vw',
@@ -48,8 +48,14 @@ function App() {
               onCloseClick={() => setActiveMarker(null)}
             >
               <div>
-                <strong>Airport Arrivals</strong>
-                <br />
+                <div style={{
+                  fontWeight: 'bold',
+                  fontSize: '1.1em',
+                  marginBottom: 4,
+                  lineHeight: 1.2
+                }}>
+                  Airport Arrivals
+                </div>
                 4470-523 Moreira, Portugal
               </div>
             </InfoWindow>
@@ -66,8 +72,14 @@ function App() {
               onCloseClick={() => setActiveMarker(null)}
             >
               <div>
-                <strong>Airbnb</strong>
-                <br />
+                <div style={{
+                  fontWeight: 'bold',
+                  fontSize: '1.1em',
+                  marginBottom: 4,
+                  lineHeight: 1.2
+                }}>
+                  Airbnb
+                </div>
                 Rua Formosa 414, Porto
               </div>
             </InfoWindow>
