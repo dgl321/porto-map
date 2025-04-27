@@ -6,9 +6,10 @@ const OPO = { lat: 41.2421, lng: -8.6788 }; // Porto Airport
 const FORMOSA = { lat: 41.1486, lng: -8.6062 }; // Rua Formosa 414
 
 const containerStyle = {
-  width: '80vw',
-  height: '80vh',
-  margin: 'auto'
+  width: '100vw',
+  height: '100vh',
+  margin: 0,
+  padding: 0,
 };
 
 function App() {
@@ -23,8 +24,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <h1>Public Transport from OPO to Rua Formosa 414</h1>
+    <div className="App" style={{ width: '100vw', height: '100vh', margin: 0, padding: 0 }}>
       <LoadScript googleMapsApiKey={apiKey}>
         <GoogleMap
           mapContainerStyle={containerStyle}
