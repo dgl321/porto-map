@@ -1,0 +1,98 @@
+[
+    {
+        "Place": "Ideal Clube de Fado",
+        "Address": "R. do Ateneu Comercial do Porto 32, 4000-380 Porto, Portugal",
+        "Longitude": -8.607922,
+        "Latitude": 41.1477248
+    },
+    {
+        "Place": "Clérigos Church",
+        "Address": "R. de São Filipe de Nery, 4050-546 Porto, Portugal",
+        "Longitude": -8.6139451,
+        "Latitude": 41.1458838
+    },
+    {
+        "Place": "Palácio da Bolsa, Porto",
+        "Address": "Palácio da Bolsa, R. de Ferreira Borges 11, 4050-253 Porto, Portugal",
+        "Longitude": -8.6156725,
+        "Latitude": 41.1413772
+    },
+    {
+        "Place": "Burmester",
+        "Address": "Largo Dom Luís I, 4400-111 Vila Nova de Gaia, Portugal",
+        "Longitude": -8.6090051,
+        "Latitude": 41.1391
+    },
+    {
+        "Place": "Gaia",
+        "Address": "Gaia, Portugal",
+        "Longitude": -8.6117851,
+        "Latitude": 41.1238759
+    },
+    {
+        "Place": "Mercado do Bolhão",
+        "Address": "R. Formosa 322, 4000-248 Porto, Portugal",
+        "Longitude": -8.6071175,
+        "Latitude": 41.1493855
+    },
+    {
+        "Place": "Rota do Douro",
+        "Address": "Rota do Douro, Av. de Diogo Leite 438, 4400-111 Vila Nova de Gaia, Portugal",
+        "Longitude": -8.6100793,
+        "Latitude": 41.1385933
+    },
+    {
+        "Place": "Chapel of Souls",
+        "Address": "R. de Santa Catarina 428, 4000-124 Porto, Portugal",
+        "Longitude": -8.6056554,
+        "Latitude": 41.1498821
+    },
+    {
+        "Place": "São Bento",
+        "Address": "Praça de Almeida Garrett, 4000-069 Porto, Portugal",
+        "Longitude": -8.609544,
+        "Latitude": 41.145492
+    },
+    {
+        "Place": "Funicular dos Guindais",
+        "Address": "R. da Ribeira Negra 314, 4000-509 Porto, Portugal",
+        "Longitude": -8.6094983,
+        "Latitude": 41.1409434
+    },
+    {
+        "Place": "Claus Porto, Porto",
+        "Address": "R. das Flores 22, 4050-262 Porto, Portugal",
+        "Longitude": -8.6143532,
+        "Latitude": 41.1434711
+    },
+    {
+        "Place": "World of Wine, Porto",
+        "Address": "Rua do Choupelo 39, 4400-088 Vila Nova de Gaia, Portugal",
+        "Longitude": -8.6136088,
+        "Latitude": 41.1350394
+    },
+    {
+        "Place": "Livraria Lello, Porto",
+        "Address": "R. das Carmelitas 144, 4050-161 Porto, Portugal",
+        "Longitude": -8.6147746,
+        "Latitude": 41.1469055
+    },
+    {
+        "Place": "Miradouro Serra Do Pilar, Vila Nova de Gaia",
+        "Address": "",
+        "Longitude": -8.6086149,
+        "Latitude": 41.1383528
+    },
+    {
+        "Place": "Parque de Serralves",
+        "Address": "R. Dom João de Castro 210, 4150-417 Porto, Portugal",
+        "Longitude": -8.6581114,
+        "Latitude": 41.1590347
+    },
+    {
+        "Place": "Foz do Douro",
+        "Address": "Foz do Douro, Portugal",
+        "Longitude": -8.6746361,
+        "Latitude": 41.1517951
+    }
+]
