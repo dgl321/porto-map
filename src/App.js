@@ -155,6 +155,23 @@ function App() {
               </li>
             ))}
           </ol>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&origin=41.2421,-8.6788&destination=41.1486,-8.6062&travelmode=transit"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-block',
+              margin: '1em 0 0 0',
+              padding: '0.5em 1em',
+              background: '#1976d2',
+              color: 'white',
+              borderRadius: 6,
+              textDecoration: 'none',
+              fontWeight: 'bold'
+            }}
+          >
+            Open in Google Maps
+          </a>
         </div>
       )}
     </div>
