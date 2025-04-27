@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { GoogleMap, LoadScript, DirectionsService, DirectionsRenderer, Marker, InfoWindow } from '@react-google-maps/api';
 import './App.css';
 
-const AEROPORTO_METRO = { lat: 41.2351, lng: -8.6788 }; // Aeroporto Metro Stop
+const AEROPORTO_METRO = { lat: 41.235626, lng: -8.678397 }; // Aeroporto Metro Station entrance
 const FORMOSA = { lat: 41.1486, lng: -8.6062 }; // Rua Formosa 414
 
 const containerStyle = {
@@ -116,8 +116,8 @@ function App() {
           left: 20,
           background: 'rgba(255,255,255,0.97)',
           padding: '1em',
-          maxWidth: 375,
-          maxHeight: '70vh',
+          maxWidth: 350,
+          maxHeight: '80vh',
           overflowY: 'auto',
           borderRadius: 8,
           zIndex: 1200,
@@ -156,7 +156,7 @@ function App() {
             ))}
           </ol>
           <a
-            href="https://www.google.com/maps/dir/?api=1&origin=41.2351,-8.6788&destination=41.1486,-8.6062&travelmode=transit"
+            href="https://www.google.com/maps/dir/?api=1&origin=41.235626,-8.678397&destination=41.1486,-8.6062&travelmode=transit"
             target="_blank"
             rel="noopener noreferrer"
             style={{
