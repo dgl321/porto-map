@@ -63,7 +63,7 @@ function App() {
 
           <Marker
             position={FORMOSA}
-            label="Rua Formosa 414"
+            label="Apartment"
             onClick={() => setActiveMarker('airbnb')}
           />
           {activeMarker === 'airbnb' && (
@@ -95,7 +95,12 @@ function App() {
               callback={directionsCallback}
             />
           )}
-          {directions && <DirectionsRenderer directions={directions} />}
+          {directions && (
+            <DirectionsRenderer
+              directions={directions}
+              options={{ suppressMarkers: true }}
+            />
+          )}
         </GoogleMap>
       </LoadScript>
       {/* Show Directions Button */}
