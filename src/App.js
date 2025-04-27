@@ -35,7 +35,7 @@ function App() {
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={OPO}
-          zoom={12}
+          zoom={14}
         >
           <Marker
             position={OPO}
@@ -116,8 +116,8 @@ function App() {
           left: 20,
           background: 'rgba(255,255,255,0.97)',
           padding: '1em',
-          maxWidth: 350,
-          maxHeight: '80vh',
+          maxWidth: 375,
+          maxHeight: '70vh',
           overflowY: 'auto',
           borderRadius: 8,
           zIndex: 1200,
@@ -161,7 +161,7 @@ function App() {
             rel="noopener noreferrer"
             style={{
               display: 'inline-block',
-              margin: '1em 0 0 0',
+              margin: '0.5em 0 0 0',
               padding: '0.5em 1em',
               background: '#1976d2',
               color: 'white',
