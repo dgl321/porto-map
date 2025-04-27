@@ -122,7 +122,7 @@ function App() {
           }}
           onClick={() => setShowDirections(true)}
         >
-          Show Directions
+          Directions
         </button>
       )}
       {/* Transit Directions Sidebar */}
