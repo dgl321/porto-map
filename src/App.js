@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { GoogleMap, LoadScript, DirectionsService, DirectionsRenderer, Marker, InfoWindow } from '@react-google-maps/api';
 import './App.css';
 
-const AEROPORTO_METRO = { lat: 41.235626, lng: -8.678397 }; // Aeroporto Metro Station entrance
+const AEROPORTO_METRO = { lat: 41.236893482066556, lng: -8.670332547049686 }; // Aeroporto Metro Station entrance
 const FORMOSA = { lat: 41.1486, lng: -8.6062 }; // Rua Formosa 414
 
 const containerStyle = {
@@ -39,7 +39,7 @@ function App() {
         >
           <Marker
             position={AEROPORTO_METRO}
-            label="Aeroporto"
+            label="Airport"
             onClick={() => setActiveMarker('aeroporto')}
           />
           {activeMarker === 'aeroporto' && (
@@ -48,7 +48,7 @@ function App() {
               onCloseClick={() => setActiveMarker(null)}
             >
               <div>
-                <strong>Aeroporto Metro</strong>
+                <strong>Airport Arrivals</strong>
                 <br />
                 4470-523 Moreira, Portugal
               </div>
@@ -113,11 +113,11 @@ function App() {
         <div style={{
           position: 'absolute',
           top: 70,
-          left: 20,
+          left: 50,
           background: 'rgba(255,255,255,0.97)',
           padding: '1em',
-          maxWidth: 350,
-          maxHeight: '80vh',
+          maxWidth: 300,
+          maxHeight: '50vh',
           overflowY: 'auto',
           borderRadius: 8,
           zIndex: 1200,
@@ -161,7 +161,7 @@ function App() {
             rel="noopener noreferrer"
             style={{
               display: 'inline-block',
-              margin: '1em 0 0 0',
+              margin: '0.25em 0 0 0',
               padding: '0.5em 1em',
               background: '#1976d2',
               color: 'white',
