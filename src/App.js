@@ -29,7 +29,7 @@ function App() {
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={OPO}
-          zoom={12}
+          zoom={14}
         >
           <Marker
             position={OPO}
