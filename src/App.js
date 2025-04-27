@@ -156,7 +156,7 @@ function App() {
             ))}
           </ol>
           <a
-            href="https://www.google.com/maps/dir/?api=1&origin=41.235626,-8.678397&destination=41.1486,-8.6062&travelmode=transit"
+            href="https://www.google.com/maps/dir/?api=1&origin=41.236925,-8.670570&destination=41.14910335157261,-8.608906814285747&travelmode=transit"
             target="_blank"
             rel="noopener noreferrer"
             style={{
