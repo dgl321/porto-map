@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { GoogleMap, LoadScript, DirectionsService, DirectionsRenderer, Marker, InfoWindow } from '@react-google-maps/api';
 import './App.css';
 
-const OPO = { lat: 41.2421, lng: -8.6788 }; // Porto Airport
+const AEROPORTO_METRO = { lat: 41.2351, lng: -8.6788 }; // Aeroporto Metro Stop
 const FORMOSA = { lat: 41.1486, lng: -8.6062 }; // Rua Formosa 414
 
 const containerStyle = {
@@ -34,23 +34,23 @@ function App() {
       <LoadScript googleMapsApiKey={apiKey}>
         <GoogleMap
           mapContainerStyle={containerStyle}
-          center={OPO}
-          zoom={14}
+          center={AEROPORTO_METRO}
+          zoom={12}
         >
           <Marker
-            position={OPO}
-            label="OPO"
-            onClick={() => setActiveMarker('airport')}
+            position={AEROPORTO_METRO}
+            label="Aeroporto"
+            onClick={() => setActiveMarker('aeroporto')}
           />
-          {activeMarker === 'airport' && (
+          {activeMarker === 'aeroporto' && (
             <InfoWindow
-              position={OPO}
+              position={AEROPORTO_METRO}
               onCloseClick={() => setActiveMarker(null)}
             >
               <div>
-                <strong>Airport</strong>
+                <strong>Aeroporto Metro</strong>
                 <br />
-                Francisco Sá Carneiro Airport (OPO)
+                4470-523 Moreira, Portugal
               </div>
             </InfoWindow>
           )}
@@ -77,7 +77,7 @@ function App() {
             <DirectionsService
               options={{
                 destination: FORMOSA,
-                origin: OPO,
+                origin: AEROPORTO_METRO,
                 travelMode: 'TRANSIT'
               }}
               callback={directionsCallback}
@@ -156,12 +156,12 @@ function App() {
             ))}
           </ol>
           <a
-            href="https://www.google.com/maps/dir/?api=1&origin=41.2421,-8.6788&destination=41.1486,-8.6062&travelmode=transit"
+            href="https://www.google.com/maps/dir/?api=1&origin=41.2351,-8.6788&destination=41.1486,-8.6062&travelmode=transit"
             target="_blank"
             rel="noopener noreferrer"
             style={{
               display: 'inline-block',
-              margin: '0.5em 0 0 0',
+              margin: '1em 0 0 0',
               padding: '0.5em 1em',
               background: '#1976d2',
               color: 'white',
