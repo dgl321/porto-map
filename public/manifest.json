@@ -3,13 +3,13 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "nata.webp",
-      "type": "image/webp",
+      "src": "nata.jpg",
+      "type": "image/jpeg",
       "sizes": "192x192"
     },
     {
-      "src": "nata.webp",
-      "type": "image/webp",
+      "src": "nata.jpg",
+      "type": "image/jpeg",
       "sizes": "512x512"
     }
   ],
