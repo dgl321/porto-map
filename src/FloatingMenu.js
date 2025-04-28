@@ -14,15 +14,15 @@ function FloatingMenu() {
                     bottom: 24,
                     left: 24,
                     zIndex: 2000,
-                    width: '56px',
-                    height: '56px',
-                    minWidth: '56px',
-                    minHeight: '56px',
+                    width: '64px',
+                    height: '64px',
+                    minWidth: '64px',
+                    minHeight: '64px',
                     borderRadius: '50%',
                     background: '#1976d2',
                     color: 'white',
                     border: 'none',
-                    fontSize: '2em',
+                    fontSize: '2.5em',
                     boxShadow: '0 2px 8px rgba(0,0,0,0.18)',
                     cursor: 'pointer',
                     display: 'flex',
@@ -43,25 +43,25 @@ function FloatingMenu() {
                 <div
                     style={{
                         position: 'fixed',
-                        bottom: 90,
+                        bottom: 100,
                         left: 24,
                         background: 'white',
-                        borderRadius: 10,
+                        borderRadius: 12,
                         boxShadow: '0 4px 24px rgba(0,0,0,0.18)',
-                        padding: '1em 1.5em',
+                        padding: '1.2em 1.8em',
                         zIndex: 2100,
-                        minWidth: 180,
+                        minWidth: 200,
                         maxWidth: 'calc(100vw - 48px)'
                     }}
                 >
                     <button
                         style={{
                             position: 'absolute',
-                            top: 8,
+                            top: 12,
                             right: 12,
                             background: 'transparent',
                             border: 'none',
-                            fontSize: '1.2em',
+                            fontSize: '1.5em',
                             cursor: 'pointer',
                             color: '#888',
                             padding: 0,
@@ -73,15 +73,15 @@ function FloatingMenu() {
                     >
                         ×
                     </button>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 12 }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginTop: 16 }}>
                         <button
                             style={{
                                 background: '#1976d2',
                                 color: 'white',
                                 border: 'none',
-                                borderRadius: 6,
-                                padding: '0.5em 1em',
-                                fontSize: '1em',
+                                borderRadius: 8,
+                                padding: '0.8em 1.2em',
+                                fontSize: '1.1em',
                                 cursor: 'pointer',
                                 textAlign: 'left',
                                 whiteSpace: 'nowrap',
@@ -97,9 +97,9 @@ function FloatingMenu() {
                                 background: '#1976d2',
                                 color: 'white',
                                 border: 'none',
-                                borderRadius: 6,
-                                padding: '0.5em 1em',
-                                fontSize: '1em',
+                                borderRadius: 8,
+                                padding: '0.8em 1.2em',
+                                fontSize: '1.1em',
                                 cursor: 'pointer',
                                 textAlign: 'left',
                                 whiteSpace: 'nowrap',
@@ -115,9 +115,9 @@ function FloatingMenu() {
                                 background: '#1976d2',
                                 color: 'white',
                                 border: 'none',
-                                borderRadius: 6,
-                                padding: '0.5em 1em',
-                                fontSize: '1em',
+                                borderRadius: 8,
+                                padding: '0.8em 1.2em',
+                                fontSize: '1.1em',
                                 cursor: 'pointer',
                                 textAlign: 'left',
                                 whiteSpace: 'nowrap',
@@ -128,6 +128,29 @@ function FloatingMenu() {
                         >
                             Food & Drink
                         </button>
+                        <a
+                            href="https://www.notion.so/dgl1/Porto-Trip-1dcc85b4b4ed8053adccfdd1ed9288b3?pvs=4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                background: '#1976d2',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: 8,
+                                padding: '0.8em 1.2em',
+                                fontSize: '1.1em',
+                                cursor: 'pointer',
+                                textAlign: 'left',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                textDecoration: 'none',
+                                display: 'block'
+                            }}
+                            onClick={() => setOpen(false)}
+                        >
+                            Trip Plan
+                        </a>
                     </div>
                 </div>
             )}
