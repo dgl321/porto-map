@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUtensils, faWineGlass, faCoffee, faBeer } from '@fortawesome/free-solid-svg-icons';
@@ -45,7 +45,23 @@ function getVenueIcon(venue) {
 
 function Food() {
     const [activePlace, setActivePlace] = useState(null);
+    const [map, setMap] = useState(null);
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
+    const onLoad = useCallback((map) => {
+        setMap(map);
+    }, []);
+
+    const createMarkerIcon = (iconData) => {
+        if (!map) return null;
+
+        return {
+            url: `data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='${encodeURIComponent(iconData.color)}' d='${iconData.icon.icon[4]}'/></svg>`,
+            scaledSize: new window.google.maps.Size(30, 30),
+            anchor: new window.google.maps.Point(15, 15),
+            scale: iconData.scale
+        };
+    };
 
     return (
         <div style={{ width: '100vw', height: '100vh', margin: 0, padding: 0 }}>
@@ -54,22 +70,20 @@ function Food() {
                     mapContainerStyle={containerStyle}
                     center={PORTO_CENTER}
                     zoom={13}
+                    onLoad={onLoad}
                 >
-                    {food.map((place, idx) => {
+                    {map && food.map((place, idx) => {
                         const iconData = getVenueIcon(place.Venue);
-                        return (
+                        const icon = createMarkerIcon(iconData);
+
+                        return icon ? (
                             <Marker
                                 key={idx}
                                 position={{ lat: place.Latitude, lng: place.Longitude }}
                                 onClick={() => setActivePlace(idx)}
-                                icon={{
-                                    url: `data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path fill='${encodeURIComponent(iconData.color)}' d='${iconData.icon.icon[4]}'/></svg>`,
-                                    scaledSize: new window.google.maps.Size(30, 30),
-                                    anchor: new window.google.maps.Point(15, 15),
-                                    scale: iconData.scale
-                                }}
+                                icon={icon}
                             />
-                        );
+                        ) : null;
                     })}
                     {activePlace !== null && (
                         <InfoWindow
