@@ -2,7 +2,6 @@ import React, { useState, useCallback } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUtensils, faWineGlass, faCoffee, faBeer } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import food from './food.json';
 import FloatingMenu from './FloatingMenu';
 
