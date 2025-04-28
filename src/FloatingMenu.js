@@ -91,6 +91,20 @@ function FloatingMenu() {
                         >
                             Things to do
                         </button>
+                        <button
+                            style={{
+                                background: '#1976d2',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: 6,
+                                padding: '0.5em 1em',
+                                fontSize: '1em',
+                                cursor: 'pointer'
+                            }}
+                            onClick={() => { navigate('/food'); setOpen(false); }}
+                        >
+                            Food & Drink
+                        </button>
                     </div>
                 </div>
             )}

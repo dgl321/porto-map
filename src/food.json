@@ -1,0 +1,202 @@
+[
+    {
+        "Place": "Cafe Santiago",
+        "Address": "R. de Passos Manuel 226, 4000-382 Porto, Portugal",
+        "Latitude": 41.1463821,
+        "Longitude": -8.6048251,
+        "Price": "€",
+        "Venue": "Café",
+        "Tags": "Lunch",
+        "Specialty": "Francesinha"
+    },
+    {
+        "Place": "O Diplomata",
+        "Address": "R. de José Falcão 32, 4050-198 Porto, Portugal",
+        "Latitude": 41.1481475,
+        "Longitude": -8.6143475,
+        "Price": "€",
+        "Venue": "Café",
+        "Tags": "Brunch",
+        "Specialty": "Pancakes"
+    },
+    {
+        "Place": "Reitoria",
+        "Address": "R. de Sá de Noronha 33, 4050-159 Porto, Portugal",
+        "Latitude": 41.1476124,
+        "Longitude": -8.6152938,
+        "Price": "€€€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Italian"
+    },
+    {
+        "Place": "O Fado",
+        "Address": "Largo São João Novo 16, 4050-556 Porto, Portugal",
+        "Latitude": 41.1423126,
+        "Longitude": -8.6174954,
+        "Price": "€€€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Traditional"
+    },
+    {
+        "Place": "The Royal Cocktail Club",
+        "Address": "Rua da Fábrica 105, 4050-247 Porto, Portugal",
+        "Latitude": 41.1475645,
+        "Longitude": -8.6137382,
+        "Price": "",
+        "Venue": "Bar",
+        "Tags": "Drinks",
+        "Specialty": "Cocktails"
+    },
+    {
+        "Place": "Ferro Bar",
+        "Address": "R. da Madeira 84, 4000-427 Porto, Portugal",
+        "Latitude": 41.1458308,
+        "Longitude": -8.6084425,
+        "Price": "",
+        "Venue": "Bar",
+        "Tags": "Drinks",
+        "Specialty": "Cocktails"
+    },
+    {
+        "Place": "Manteigaria (Bolhão)",
+        "Address": "R. de Alexandre Braga 24, 4000-049 Porto, Portugal",
+        "Latitude": 41.1486437,
+        "Longitude": -8.6069376,
+        "Price": "€",
+        "Venue": "Café",
+        "Tags": "Snacks",
+        "Specialty": "Pastéis de nata"
+    },
+    {
+        "Place": "Casa de Pasto da Palmeira",
+        "Address": "R. do Passeio Alegre 450, 4150-572 Porto, Portugal",
+        "Latitude": 41.1476496,
+        "Longitude": -8.6665064,
+        "Price": "€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Seafood"
+    },
+    {
+        "Place": "Taberna Rio Restaurante",
+        "Address": "Cais da Ribeira 24, 4050-509 Porto, Portugal",
+        "Latitude": 41.1406547,
+        "Longitude": -8.6112987,
+        "Price": "€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Mediterranean"
+    },
+    {
+        "Place": "Restaurante Cantina 32",
+        "Address": "R. das Flores 32, 4050-262 Porto, Portugal",
+        "Latitude": 41.1435373,
+        "Longitude": -8.6142105,
+        "Price": "€€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Seafood"
+    },
+    {
+        "Place": "Oficina dos Rissóis",
+        "Address": "Passeio de São Lázaro 5A, 4000-507 Porto, Portugal",
+        "Latitude": 41.1458008,
+        "Longitude": -8.6033419,
+        "Price": "€",
+        "Venue": "Restaurant",
+        "Tags": "Snacks",
+        "Specialty": "Rissoles"
+    },
+    {
+        "Place": "Curb",
+        "Address": "Rua da Torrinha 111, 4050-611 Porto, Portugal",
+        "Latitude": 41.1524516,
+        "Longitude": -8.6199824,
+        "Price": "€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Burgers"
+    },
+    {
+        "Place": "Bota and Bira",
+        "Address": "R. do Comércio do Porto 191, 4050-253 Porto, Portugal",
+        "Latitude": 41.1424129,
+        "Longitude": -8.6158059,
+        "Price": "€",
+        "Venue": "Restaurant",
+        "Tags": "Snacks",
+        "Specialty": "Tapas"
+    },
+    {
+        "Place": "Impar Flores",
+        "Address": "R. das Flores 306, 4000-069 Porto, Portugal",
+        "Latitude": 41.1449592,
+        "Longitude": -8.6115133,
+        "Price": "€€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Italian"
+    },
+    {
+        "Place": "A Despensa",
+        "Address": "R. do Conde de Vizela 141, 4050-640 Porto, Portugal",
+        "Latitude": 41.1472496,
+        "Longitude": -8.613547,
+        "Price": "€€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Italian"
+    },
+    {
+        "Place": "Adega Leonor",
+        "Address": "Campo dos Mártires da Pátria n°58, 4050-366 Porto, Portugal",
+        "Latitude": 41.1466211,
+        "Longitude": -8.6169196,
+        "Price": "€",
+        "Venue": "Restaurant",
+        "Tags": "Snacks",
+        "Specialty": "Tapas"
+    },
+    {
+        "Place": "Base Porto",
+        "Address": "Passeio dos Clerigos Quiosque Jardin, R. das Carmelitas 151, 4050-163 Porto, Portugal",
+        "Latitude": 41.1461969,
+        "Longitude": -8.6146961,
+        "Price": "€€",
+        "Venue": "Bar",
+        "Tags": "Drinks",
+        "Specialty": "Vibes"
+    },
+    {
+        "Place": "Torto",
+        "Address": "R. de José Falcão 199, 4050-199 Porto, Portugal",
+        "Latitude": 41.1496973,
+        "Longitude": -8.6141788,
+        "Price": "€€",
+        "Venue": "Bar",
+        "Tags": "Drinks",
+        "Specialty": "Cocktails"
+    },
+    {
+        "Place": "Letraria",
+        "Address": "Rua da Alegria 101, 4000-042 Porto, Portugal",
+        "Latitude": 41.1483813,
+        "Longitude": -8.6040734,
+        "Price": "€",
+        "Venue": "Bar",
+        "Tags": "Drinks",
+        "Specialty": "Craft beer"
+    },
+    {
+        "Place": "Mirajazz",
+        "Address": "Escadas do Caminho Novo 11, 4050-554 Porto, Portugal",
+        "Latitude": 41.141597,
+        "Longitude": -8.618089,
+        "Price": "€",
+        "Venue": "Bar",
+        "Tags": "Drinks",
+        "Specialty": "Vibes"
+    }
+]
