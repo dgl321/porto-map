@@ -14,15 +14,23 @@ function FloatingMenu() {
                     bottom: 24,
                     left: 24,
                     zIndex: 2000,
-                    width: 56,
-                    height: 56,
+                    width: '56px',
+                    height: '56px',
+                    minWidth: '56px',
+                    minHeight: '56px',
                     borderRadius: '50%',
                     background: '#1976d2',
                     color: 'white',
                     border: 'none',
                     fontSize: '2em',
                     boxShadow: '0 2px 8px rgba(0,0,0,0.18)',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: 0,
+                    lineHeight: 1,
+                    aspectRatio: '1/1'
                 }}
                 onClick={() => setOpen(!open)}
                 aria-label="Open navigation"
@@ -42,7 +50,8 @@ function FloatingMenu() {
                         boxShadow: '0 4px 24px rgba(0,0,0,0.18)',
                         padding: '1em 1.5em',
                         zIndex: 2100,
-                        minWidth: 180
+                        minWidth: 180,
+                        maxWidth: 'calc(100vw - 48px)'
                     }}
                 >
                     <button
@@ -54,7 +63,9 @@ function FloatingMenu() {
                             border: 'none',
                             fontSize: '1.2em',
                             cursor: 'pointer',
-                            color: '#888'
+                            color: '#888',
+                            padding: 0,
+                            lineHeight: 1
                         }}
                         onClick={() => setOpen(false)}
                         aria-label="Close"
@@ -71,7 +82,11 @@ function FloatingMenu() {
                                 borderRadius: 6,
                                 padding: '0.5em 1em',
                                 fontSize: '1em',
-                                cursor: 'pointer'
+                                cursor: 'pointer',
+                                textAlign: 'left',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis'
                             }}
                             onClick={() => { navigate('/'); setOpen(false); }}
                         >
@@ -85,7 +100,11 @@ function FloatingMenu() {
                                 borderRadius: 6,
                                 padding: '0.5em 1em',
                                 fontSize: '1em',
-                                cursor: 'pointer'
+                                cursor: 'pointer',
+                                textAlign: 'left',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis'
                             }}
                             onClick={() => { navigate('/places'); setOpen(false); }}
                         >
@@ -99,7 +118,11 @@ function FloatingMenu() {
                                 borderRadius: 6,
                                 padding: '0.5em 1em',
                                 fontSize: '1em',
-                                cursor: 'pointer'
+                                cursor: 'pointer',
+                                textAlign: 'left',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis'
                             }}
                             onClick={() => { navigate('/food'); setOpen(false); }}
                         >
