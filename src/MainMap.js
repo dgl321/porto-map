@@ -4,7 +4,7 @@ import './App.css';
 import FloatingMenu from './FloatingMenu';
 
 const AEROPORTO_METRO = { lat: 41.236893482066556, lng: -8.670332547049686 }; // Aeroporto Metro Station entrance
-const FORMOSA = { lat: 41.1486, lng: -8.6062 }; // Rua Formosa 414
+const FORMOSA = { lat: 41.14916943789735, lng: -8.609004400792529 }; // R. Formosa 414 1, 4000-249 Porto, Portugal (Airbnb)
 
 const containerStyle = {
     width: '100vw',
@@ -64,7 +64,7 @@ function MainMap() {
 
                     <Marker
                         position={FORMOSA}
-                        label="Rua Formosa 414"
+                        label="Airbnb"
                         onClick={() => setActiveMarker('airbnb')}
                     />
                     {activeMarker === 'airbnb' && (
@@ -81,7 +81,7 @@ function MainMap() {
                                 }}>
                                     Airbnb
                                 </div>
-                                Rua Formosa 414, Porto
+                                R. Formosa 414 1, 4000-249 Porto, Portugal
                             </div>
                         </InfoWindow>
                     )}
@@ -174,7 +174,7 @@ function MainMap() {
                         ))}
                     </ol>
                     <a
-                        href="https://www.google.com/maps/dir/?api=1&origin=41.236925,-8.670570&destination=41.14910335157261,-8.608906814285747&travelmode=transit"
+                        href="https://www.google.com/maps/dir/?api=1&origin=41.236925,-8.670570&destination=41.14916943789735,-8.609004400792529&travelmode=transit"
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{

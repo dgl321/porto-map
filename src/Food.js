@@ -1,14 +1,15 @@
 import React, { useState, useCallback } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUtensils, faWineGlass, faCoffee, faBeer } from '@fortawesome/free-solid-svg-icons';
+import { faUtensils, faWineGlass, faCoffee, faBeer, faHouse } from '@fortawesome/free-solid-svg-icons';
 import food from './food.json';
 import FloatingMenu from './FloatingMenu';
 
 // Add icons to library
-library.add(faUtensils, faWineGlass, faCoffee, faBeer);
+library.add(faUtensils, faWineGlass, faCoffee, faBeer, faHouse);
 
 const PORTO_CENTER = { lat: 41.1579, lng: -8.6291 };
+const AIRBNB_LOCATION = { lat: 41.14916943789735, lng: -8.609004400792529 }; // R. Formosa 414 1, 4000-249 Porto
 
 const containerStyle = {
     width: '100vw',
@@ -32,6 +33,11 @@ const ICONS = {
         icon: faCoffee,
         color: '#795548', // Brown
         scale: 0.7
+    },
+    airbnb: {
+        icon: faHouse,
+        color: '#e91e63', // Pink
+        scale: 0.7
     }
 };
 
@@ -44,6 +50,7 @@ function getVenueIcon(venue) {
 
 function Food() {
     const [activePlace, setActivePlace] = useState(null);
+    const [showAirbnb, setShowAirbnb] = useState(false);
     const [map, setMap] = useState(null);
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
@@ -71,19 +78,67 @@ function Food() {
                     zoom={13}
                     onLoad={onLoad}
                 >
-                    {map && food.map((place, idx) => {
-                        const iconData = getVenueIcon(place.Venue);
-                        const icon = createMarkerIcon(iconData);
-
-                        return icon ? (
+                    {map && (
+                        <>
+                            {/* Airbnb Marker */}
                             <Marker
-                                key={idx}
-                                position={{ lat: place.Latitude, lng: place.Longitude }}
-                                onClick={() => setActivePlace(idx)}
-                                icon={icon}
+                                position={AIRBNB_LOCATION}
+                                onClick={() => setShowAirbnb(true)}
+                                icon={createMarkerIcon(ICONS.airbnb)}
                             />
-                        ) : null;
-                    })}
+
+                            {food.map((place, idx) => {
+                                const iconData = getVenueIcon(place.Venue);
+                                const icon = createMarkerIcon(iconData);
+
+                                return icon ? (
+                                    <Marker
+                                        key={idx}
+                                        position={{ lat: place.Latitude, lng: place.Longitude }}
+                                        onClick={() => setActivePlace(idx)}
+                                        icon={icon}
+                                    />
+                                ) : null;
+                            })}
+                        </>
+                    )}
+
+                    {showAirbnb && (
+                        <InfoWindow
+                            position={AIRBNB_LOCATION}
+                            onCloseClick={() => setShowAirbnb(false)}
+                        >
+                            <div>
+                                <div style={{ fontWeight: 'bold', fontSize: '1.1em', marginBottom: 4 }}>
+                                    Airbnb
+                                </div>
+                                <div style={{ marginBottom: 8 }}>
+                                    R. Formosa 414 1, 4000-249 Porto, Portugal
+                                </div>
+                                <a
+                                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                                        "R. Formosa 414 1, 4000-249 Porto, Portugal"
+                                    )}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        display: 'inline-block',
+                                        marginTop: 4,
+                                        padding: '0.3em 0.8em',
+                                        background: '#1976d2',
+                                        color: 'white',
+                                        borderRadius: 6,
+                                        textDecoration: 'none',
+                                        fontWeight: 'bold',
+                                        fontSize: '0.95em'
+                                    }}
+                                >
+                                    Open in Google Maps
+                                </a>
+                            </div>
+                        </InfoWindow>
+                    )}
+
                     {activePlace !== null && (
                         <InfoWindow
                             position={{
