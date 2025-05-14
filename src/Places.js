@@ -82,6 +82,7 @@ function Places() {
                     mapContainerStyle={containerStyle}
                     center={PORTO_CENTER}
                     zoom={13}
+                    gestureHandling={'greedy'}
                 >
                     {/* Airbnb Marker */}
                     <Marker

@@ -83,6 +83,7 @@ function Food() {
                     center={PORTO_CENTER}
                     zoom={13}
                     onLoad={onLoad}
+                    gestureHandling={'greedy'}
                 >
                     {map && (
                         <>
