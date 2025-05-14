@@ -25,6 +25,65 @@
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Interactive map of Porto" />
   <title>Porto Map</title>
+
+  <!-- Fix Google Maps "Use two fingers" message -->
+  <style>
+    /* Hide Google Maps "Use two fingers" message */
+    .gm-style>div>div:last-child>div:not(:empty) {
+      display: none !important;
+    }
+
+    /* Hide the "For improved scrolling..." tooltip */
+    .dismissable-toaster {
+      display: none !important;
+    }
+
+    /* Extra styles to ensure touch handling works properly */
+    .gm-style,
+    .gm-style * {
+      touch-action: manipulation !important;
+    }
+  </style>
+
+  <script>
+    // Override Google Maps gesture handling behavior
+    window.gmapsGestureHandlingOverride = function () {
+      if (window.google && window.google.maps) {
+        // Try to modify the Maps API directly
+        if (window.google.maps.Map && window.google.maps.Map.prototype) {
+          const originalSetOptions = window.google.maps.Map.prototype.setOptions;
+          window.google.maps.Map.prototype.setOptions = function (options) {
+            if (!options) options = {};
+            options.gestureHandling = 'greedy';
+            return originalSetOptions.call(this, options);
+          };
+        }
+      }
+    };
+
+    // Set up a MutationObserver to hide the "Use two fingers" message
+    window.addEventListener('load', function () {
+      // Try to execute the gesture handling override
+      window.gmapsGestureHandlingOverride();
+
+      // Repeatedly try to apply the override
+      const intervalId = setInterval(function () {
+        window.gmapsGestureHandlingOverride();
+
+        // Hide any "Use two fingers" messages
+        document.querySelectorAll('.gm-style > div > div:last-child > div').forEach(el => {
+          if (el.textContent && el.textContent.includes('Use two fingers')) {
+            el.style.display = 'none';
+          }
+        });
+      }, 1000);
+
+      // Stop trying after 10 seconds
+      setTimeout(function () {
+        clearInterval(intervalId);
+      }, 10000);
+    });
+  </script>
 </head>
 
 <body>

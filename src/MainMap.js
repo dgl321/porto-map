@@ -1,16 +1,18 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { GoogleMap, LoadScript, DirectionsService, DirectionsRenderer, Marker, InfoWindow } from '@react-google-maps/api';
 import './App.css';
+import './MapStyles.css';
 import FloatingMenu from './FloatingMenu';
+import MapWrapper from './MapWrapper';
+import { applyGestureHandlingFix } from './GoogleMapsController';
 
 const AEROPORTO_METRO = { lat: 41.236893482066556, lng: -8.670332547049686 }; // Aeroporto Metro Station entrance
 const FORMOSA = { lat: 41.14916943789735, lng: -8.609004400792529 }; // R. Formosa 414 1, 4000-249 Porto, Portugal (Airbnb)
 
-const containerStyle = {
-    width: '100vw',
-    height: '100vh',
-    margin: 0,
-    padding: 0,
+// Define map container style directly in the component
+const mapContainerStyle = {
+    width: '100%',
+    height: '100%',
 };
 
 function MainMap() {
@@ -30,18 +32,38 @@ function MainMap() {
         }
     }, []);
 
+    // Apply the gesture handling fix when component mounts
+    useEffect(() => {
+        // Wait for maps to load first
+        const timeoutId = setTimeout(() => {
+            const cleanup = applyGestureHandlingFix();
+            return () => cleanup(); // Clean up when component unmounts
+        }, 1000);
+
+        return () => clearTimeout(timeoutId);
+    }, []);
+
     return (
-        <div className="App" style={{ width: '100vw', height: '100vh', margin: 0, padding: 0 }}>
+        <div className="App" style={{ width: '100vw', height: '100vh', position: 'relative' }}>
             <LoadScript
                 googleMapsApiKey={apiKey}
                 region="ie"
                 language="en"
+                version="weekly"
+                onLoad={() => console.log("Maps API loaded successfully")}
             >
                 <GoogleMap
-                    mapContainerStyle={containerStyle}
+                    mapContainerStyle={mapContainerStyle}
                     center={AEROPORTO_METRO}
                     zoom={12}
                     gestureHandling="greedy"
+                    options={{
+                        fullscreenControl: true,
+                        zoomControl: true,
+                        scrollwheel: true,
+                        disableDoubleClickZoom: false,
+                        gestureHandling: 'greedy',
+                    }}
                 >
                     <Marker
                         position={AEROPORTO_METRO}

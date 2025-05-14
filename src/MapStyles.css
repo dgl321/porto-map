@@ -1,0 +1,50 @@
+/* MapStyles.css */
+.map-container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    touch-action: manipulation;
+}
+
+/* Fix for Google Maps touch handling on mobile */
+.gm-style {
+    touch-action: pan-x pan-y;
+}
+
+/* This makes Google Maps controls more touch-friendly */
+.gmnoprint>div {
+    touch-action: none !important;
+}
+
+/* Ensure fullscreen control is visible and larger on mobile */
+.gm-fullscreen-control {
+    display: block !important;
+    margin: 10px !important;
+}
+
+/* Apply styles to a wrapper around the map to make it respond better to touch events */
+.map-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    touch-action: manipulation;
+}
+
+/* Make controls more touch-friendly on mobile devices */
+@media (max-width: 768px) {
+
+    /* Scale up controls for easier touch */
+    .gm-bundled-control {
+        transform: scale(1.3);
+    }
+
+    .gm-fullscreen-control {
+        transform: scale(1.5);
+    }
+
+    /* Prevent accidental double-tap zooms */
+    .gm-style {
+        touch-action: none;
+    }
+}

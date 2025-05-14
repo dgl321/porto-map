@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMonument, faLandmark, faBagShopping, faUtensils, faWineGlass, faLocationPin, faMusic, faHouse } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import places from './places.json';
 import FloatingMenu from './FloatingMenu';
+import './MapStyles.css';
+import { applyGestureHandlingFix } from './GoogleMapsController';
 
 // Add icons to library
 library.add(faMonument, faLandmark, faBagShopping, faUtensils, faWineGlass, faLocationPin, faMusic, faHouse);
@@ -12,11 +14,10 @@ library.add(faMonument, faLandmark, faBagShopping, faUtensils, faWineGlass, faLo
 const PORTO_CENTER = { lat: 41.1579, lng: -8.6291 };
 const AIRBNB_LOCATION = { lat: 41.14916943789735, lng: -8.609004400792529 }; // R. Formosa 414 1, 4000-249 Porto
 
-const containerStyle = {
-    width: '100vw',
-    height: '100vh',
-    margin: 0,
-    padding: 0,
+// Define map container style directly
+const mapContainerStyle = {
+    width: '100%',
+    height: '100%',
 };
 
 const ICONS = {
@@ -71,18 +72,38 @@ function Places() {
     const [showLegend, setShowLegend] = useState(false);
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
+    // Apply the gesture handling fix when component mounts
+    useEffect(() => {
+        // Wait for maps to load first
+        const timeoutId = setTimeout(() => {
+            const cleanup = applyGestureHandlingFix();
+            return () => cleanup(); // Clean up when component unmounts
+        }, 1000);
+
+        return () => clearTimeout(timeoutId);
+    }, []);
+
     return (
-        <div style={{ width: '100vw', height: '100vh', margin: 0, padding: 0 }}>
+        <div style={{ width: '100vw', height: '100vh', position: 'relative' }}>
             <LoadScript
                 googleMapsApiKey={apiKey}
                 region="ie"
                 language="en"
+                version="weekly"
+                onLoad={() => console.log("Maps API loaded successfully")}
             >
                 <GoogleMap
-                    mapContainerStyle={containerStyle}
+                    mapContainerStyle={mapContainerStyle}
                     center={PORTO_CENTER}
                     zoom={13}
                     gestureHandling="greedy"
+                    options={{
+                        fullscreenControl: true,
+                        zoomControl: true,
+                        scrollwheel: true,
+                        disableDoubleClickZoom: false,
+                        gestureHandling: 'greedy',
+                    }}
                 >
                     {/* Airbnb Marker */}
                     <Marker
