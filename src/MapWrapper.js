@@ -34,7 +34,7 @@ const MapWrapper = ({ children }) => {
                 wrapper.removeEventListener('touchstart', handleTouch);
             };
         }
-    }, []);
+    }, [handleTouch, mapActivated]);
 
     return (
         <div

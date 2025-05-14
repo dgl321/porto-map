@@ -3,7 +3,6 @@ import { GoogleMap, LoadScript, DirectionsService, DirectionsRenderer, Marker, I
 import './App.css';
 import './MapStyles.css';
 import FloatingMenu from './FloatingMenu';
-import MapWrapper from './MapWrapper';
 import { applyGestureHandlingFix } from './GoogleMapsController';
 
 const AEROPORTO_METRO = { lat: 41.236893482066556, lng: -8.670332547049686 }; // Aeroporto Metro Station entrance
