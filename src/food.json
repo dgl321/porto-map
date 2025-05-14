@@ -120,6 +120,16 @@
         "Specialty": "Burgers"
     },
     {
+        "Place": "Pregar",
+        "Address": "Lgo de S. Domingos 96, 4050-265 Porto, Portugal",
+        "Latitude": 41.1429885622782,
+        "Longitude": -8.614481597423095,
+        "Price": "€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Burgers"
+    },
+    {
         "Place": "Bota and Bira",
         "Address": "R. do Comércio do Porto 191, 4050-253 Porto, Portugal",
         "Latitude": 41.1424129,

@@ -1,12 +1,13 @@
 import React, { useState, useCallback } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUtensils, faWineGlass, faCoffee, faBeer, faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faUtensils, faWineGlass, faCoffee, faBeer, faHouse, faList } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import food from './food.json';
 import FloatingMenu from './FloatingMenu';
 
 // Add icons to library
-library.add(faUtensils, faWineGlass, faCoffee, faBeer, faHouse);
+library.add(faUtensils, faWineGlass, faCoffee, faBeer, faHouse, faList);
 
 const PORTO_CENTER = { lat: 41.1579, lng: -8.6291 };
 const AIRBNB_LOCATION = { lat: 41.14916943789735, lng: -8.609004400792529 }; // R. Formosa 414 1, 4000-249 Porto
@@ -52,6 +53,7 @@ function Food() {
     const [activePlace, setActivePlace] = useState(null);
     const [showAirbnb, setShowAirbnb] = useState(false);
     const [map, setMap] = useState(null);
+    const [showListModal, setShowListModal] = useState(false);
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
     const onLoad = useCallback((map) => {
@@ -232,6 +234,152 @@ function Food() {
                     )}
                 </GoogleMap>
             </LoadScript>
+
+            {/* Restaurant List Button */}
+            <button
+                style={{
+                    position: 'absolute',
+                    top: 80,
+                    left: 30,
+                    zIndex: 1200,
+                    padding: '0.5em 1em',
+                    fontSize: '1em',
+                    borderRadius: 6,
+                    border: 'none',
+                    background: '#388e3c',
+                    color: 'white',
+                    cursor: 'pointer',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
+                }}
+                onClick={() => setShowListModal(true)}
+            >
+                <FontAwesomeIcon icon={faList} /> Restaurant List
+            </button>
+
+            {/* Restaurant List Modal */}
+            {showListModal && (
+                <div style={{
+                    position: 'fixed',
+                    top: 0, left: 0, right: 0, bottom: 0,
+                    background: 'rgba(0,0,0,0.5)',
+                    zIndex: 2000,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}>
+                    <div style={{
+                        background: 'white',
+                        borderRadius: 10,
+                        padding: '1.5em',
+                        maxWidth: '90%',
+                        width: '500px',
+                        maxHeight: '80vh',
+                        overflowY: 'auto',
+                        position: 'relative',
+                        boxShadow: '0 4px 24px rgba(0,0,0,0.18)'
+                    }}>
+                        <button
+                            style={{
+                                position: 'absolute',
+                                top: 16,
+                                right: 16,
+                                background: 'transparent',
+                                border: 'none',
+                                fontSize: '1.5em',
+                                cursor: 'pointer',
+                                color: '#888',
+                                padding: 0,
+                                lineHeight: 1
+                            }}
+                            onClick={() => setShowListModal(false)}
+                            aria-label="Close"
+                            title="Close"
+                        >
+                            ×
+                        </button>
+                        <h2 style={{ marginTop: 0, marginBottom: '1em' }}>Porto Restaurants & Bars</h2>
+
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                            {food.map((place, idx) => {
+                                const iconData = getVenueIcon(place.Venue);
+
+                                return (
+                                    <div
+                                        key={idx}
+                                        style={{
+                                            padding: '12px',
+                                            borderRadius: '8px',
+                                            border: '1px solid #eee',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.2s ease',
+                                            backgroundColor: '#f9f9f9',
+                                            ':hover': { backgroundColor: '#f0f0f0' }
+                                        }}
+                                        onClick={() => {
+                                            setActivePlace(idx);
+                                            setShowListModal(false);
+                                            if (map) {
+                                                map.panTo({ lat: place.Latitude, lng: place.Longitude });
+                                                map.setZoom(16);
+                                            }
+                                        }}
+                                    >
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                            <FontAwesomeIcon
+                                                icon={iconData.icon}
+                                                style={{
+                                                    color: iconData.color,
+                                                    fontSize: '24px',
+                                                    minWidth: '24px'
+                                                }}
+                                            />
+                                            <div>
+                                                <div style={{ fontWeight: 'bold', fontSize: '1.1em' }}>
+                                                    {place.Place}
+                                                </div>
+                                                <div style={{
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    gap: '8px',
+                                                    marginTop: '4px',
+                                                    fontSize: '0.9em',
+                                                    color: '#666'
+                                                }}>
+                                                    <span>{place.Venue}</span>
+                                                    {place.Price && (
+                                                        <span style={{
+                                                            background: '#f5f5f5',
+                                                            padding: '2px 6px',
+                                                            borderRadius: '4px',
+                                                            fontWeight: 'bold'
+                                                        }}>
+                                                            {place.Price}
+                                                        </span>
+                                                    )}
+                                                    {place.Specialty && (
+                                                        <span style={{
+                                                            background: '#e8f5e9',
+                                                            padding: '2px 6px',
+                                                            borderRadius: '4px',
+                                                            fontSize: '0.9em'
+                                                        }}>
+                                                            {place.Specialty}
+                                                        </span>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <FloatingMenu />
         </div>
     );
