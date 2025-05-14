@@ -160,6 +160,26 @@
         "Specialty": "Italian"
     },
     {
+        "Place": "Gazela",
+        "Address": "Tv. do Cimo de Vila 4, 4000-434 Porto, Portugal",
+        "Latitude": 41.14496855140619,
+        "Longitude": -8.606420569791293,
+        "Price": "€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Cachorrinho"
+    },
+    {
+        "Place": "The House of Brazilian Food",
+        "Address": "R. Nova de São Crispim 286, 4000-363 Porto, Portugal",
+        "Latitude": 41.16012690090461,
+        "Longitude": -8.595219864187829,
+        "Price": "€€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Brazilian"
+    },
+    {
         "Place": "Adega Leonor",
         "Address": "Campo dos Mártires da Pátria n°58, 4050-366 Porto, Portugal",
         "Latitude": 41.1466211,
