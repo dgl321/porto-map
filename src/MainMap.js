@@ -32,7 +32,11 @@ function MainMap() {
 
     return (
         <div className="App" style={{ width: '100vw', height: '100vh', margin: 0, padding: 0 }}>
-            <LoadScript googleMapsApiKey={apiKey}>
+            <LoadScript
+                googleMapsApiKey={apiKey}
+                region="ie"
+                language="en"
+            >
                 <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={AEROPORTO_METRO}
@@ -174,7 +178,7 @@ function MainMap() {
                         ))}
                     </ol>
                     <a
-                        href="https://www.google.com/maps/dir/?api=1&origin=41.236925,-8.670570&destination=41.14916943789735,-8.609004400792529&travelmode=transit"
+                        href="https://www.google.ie/maps/dir/?api=1&origin=41.236925,-8.670570&destination=41.14916943789735,-8.609004400792529&travelmode=transit"
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{

@@ -71,7 +71,11 @@ function Food() {
 
     return (
         <div style={{ width: '100vw', height: '100vh', margin: 0, padding: 0 }}>
-            <LoadScript googleMapsApiKey={apiKey}>
+            <LoadScript
+                googleMapsApiKey={apiKey}
+                region="ie"
+                language="en"
+            >
                 <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={PORTO_CENTER}
@@ -116,7 +120,7 @@ function Food() {
                                     R. Formosa 414 1, 4000-249 Porto, Portugal
                                 </div>
                                 <a
-                                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                                    href={`https://www.google.ie/maps/search/?api=1&query=${encodeURIComponent(
                                         "R. Formosa 414 1, 4000-249 Porto, Portugal"
                                     )}`}
                                     target="_blank"
@@ -204,7 +208,7 @@ function Food() {
                                     )}
                                 </div>
                                 <a
-                                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                                    href={`https://www.google.ie/maps/search/?api=1&query=${encodeURIComponent(
                                         food[activePlace].Place + ' ' + (food[activePlace].Address || '')
                                     )}`}
                                     target="_blank"
