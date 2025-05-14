@@ -41,7 +41,7 @@ function MainMap() {
                     mapContainerStyle={containerStyle}
                     center={AEROPORTO_METRO}
                     zoom={12}
-                    gestureHandling={'greedy'}
+                    gestureHandling="greedy"
                 >
                     <Marker
                         position={AEROPORTO_METRO}
