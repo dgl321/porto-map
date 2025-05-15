@@ -228,5 +228,25 @@
         "Venue": "Bar",
         "Tags": "Drinks",
         "Specialty": "Vibes"
+    },
+    {
+        "Place": "Padaria Ribeiro",
+        "Address": "P. de Guilherme Gomes Fernandes 21, 4050-526 Porto, Portugal",
+        "Latitude": 41.14756568910544,
+        "Longitude": -8.61495018444685,
+        "Price": "€",
+        "Venue": "Bakery",
+        "Tags": "Food",
+        "Specialty": "Sandwiches"
+    },
+    {
+        "Place": "Restavrante Dovrvm",
+        "Address": "Av. de Diogo Leite 454, 4400-111 Vila Nova de Gaia, Portugal",
+        "Latitude": 41.13869485326535,
+        "Longitude": -8.609916359200456,
+        "Price": "€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Traditional"
     }
 ]
