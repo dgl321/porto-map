@@ -11,7 +11,7 @@ import { applyGestureHandlingFix } from './GoogleMapsController';
 // Add icons to library
 library.add(faUtensils, faWineGlass, faCoffee, faBeer, faHouse, faList);
 
-const PORTO_CENTER = { lat: 41.1579, lng: -8.6291 };
+const PORTO_CENTER = { lat: 41.146, lng: -8.612 };
 const AIRBNB_LOCATION = { lat: 41.14916943789735, lng: -8.609004400792529 }; // R. Formosa 414 1, 4000-249 Porto
 
 // Define map container style directly
@@ -95,7 +95,7 @@ function Food() {
                 <GoogleMap
                     mapContainerStyle={mapContainerStyle}
                     center={PORTO_CENTER}
-                    zoom={13}
+                    zoom={14}
                     onLoad={onLoad}
                     gestureHandling="greedy"
                     options={{
