@@ -278,5 +278,15 @@
         "Venue": "Wine Bar",
         "Tags": "Drinks",
         "Specialty": "Wine"
+    },
+    {
+        "Place": "Lareira",
+        "Address": "R. Das Oliveiras 8, 4050-159 Porto, Portugal",
+        "Latitude": 41.14878518521913,
+        "Longitude": -8.61523263333658,
+        "Price": "€",
+        "Venue": "Restaurant",
+        "Tags": "Food",
+        "Specialty": "Light bites"
     }
 ]
