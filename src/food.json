@@ -248,5 +248,35 @@
         "Venue": "Restaurant",
         "Tags": "Dinner",
         "Specialty": "Traditional"
+    },
+    {
+        "Place": "Almada Terrace",
+        "Address": "Rua do Almada 362, 4050-038 Porto, Portugal",
+        "Latitude": 41.14980984124396,
+        "Longitude": -8.612033733829694,
+        "Price": "€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Seafood"
+    },
+    {
+        "Place": "The Ribs",
+        "Address": "R. do Comércio do Porto 203, 4050-295 Porto, Portugal",
+        "Latitude": 41.14247152475131,
+        "Longitude": -8.615681776405395,
+        "Price": "€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Ribs"
+    },
+    {
+        "Place": "Tá-Berna Wine & Tapas Bar",
+        "Address": "R. dos Mercadores 118, 4050-374 Porto, Portugal",
+        "Latitude": 41.1419929471188,
+        "Longitude": -8.613278123616727,
+        "Price": "€",
+        "Venue": "Wine Bar",
+        "Tags": "Drinks",
+        "Specialty": "Wine"
     }
 ]
