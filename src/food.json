@@ -16,7 +16,7 @@
         "Longitude": -8.6143475,
         "Price": "€",
         "Venue": "Café",
-        "Tags": "Brunch",
+        "Tags": "Breakfast",
         "Specialty": "Pancakes"
     },
     {
@@ -236,7 +236,7 @@
         "Longitude": -8.61495018444685,
         "Price": "€",
         "Venue": "Bakery",
-        "Tags": "Food",
+        "Tags": "Lunch",
         "Specialty": "Sandwiches"
     },
     {
@@ -286,7 +286,7 @@
         "Longitude": -8.61523263333658,
         "Price": "€",
         "Venue": "Restaurant",
-        "Tags": "Food",
+        "Tags": "Lunch",
         "Specialty": "Light bites"
     },
     {

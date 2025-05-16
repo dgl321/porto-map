@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUtensils, faWineGlass, faCoffee, faBeer, faHouse, faList } from '@fortawesome/free-solid-svg-icons';
+import { faUtensils, faWineGlass, faCoffee, faBeer, faHouse, faList, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import food from './food.json';
 import FloatingMenu from './FloatingMenu';
@@ -9,7 +9,7 @@ import './MapStyles.css';
 import { applyGestureHandlingFix } from './GoogleMapsController';
 
 // Add icons to library
-library.add(faUtensils, faWineGlass, faCoffee, faBeer, faHouse, faList);
+library.add(faUtensils, faWineGlass, faCoffee, faBeer, faHouse, faList, faFilter);
 
 const PORTO_CENTER = { lat: 41.146, lng: -8.612 };
 const AIRBNB_LOCATION = { lat: 41.14916943789735, lng: -8.609004400792529 }; // R. Formosa 414 1, 4000-249 Porto
@@ -55,7 +55,16 @@ function Food() {
     const [showAirbnb, setShowAirbnb] = useState(false);
     const [map, setMap] = useState(null);
     const [showListModal, setShowListModal] = useState(false);
+    const [selectedTag, setSelectedTag] = useState('All');
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
+    // Extract unique tags from food.json
+    const uniqueTags = ['All', ...new Set(food.map(item => item.Tags))].sort();
+
+    // Filter food items based on selected tag
+    const filteredFood = selectedTag === 'All'
+        ? food
+        : food.filter(item => item.Tags === selectedTag);
 
     const onLoad = useCallback((map) => {
         setMap(map);
@@ -115,7 +124,7 @@ function Food() {
                                 icon={createMarkerIcon(ICONS.airbnb)}
                             />
 
-                            {food.map((place, idx) => {
+                            {filteredFood.map((place, idx) => {
                                 const iconData = getVenueIcon(place.Venue);
                                 const icon = createMarkerIcon(iconData);
 
@@ -123,7 +132,10 @@ function Food() {
                                     <Marker
                                         key={idx}
                                         position={{ lat: place.Latitude, lng: place.Longitude }}
-                                        onClick={() => setActivePlace(idx)}
+                                        onClick={() => setActivePlace(food.findIndex(item =>
+                                            item.Latitude === place.Latitude &&
+                                            item.Longitude === place.Longitude
+                                        ))}
                                         icon={icon}
                                     />
                                 ) : null;
@@ -324,8 +336,51 @@ function Food() {
                         </button>
                         <h2 style={{ marginTop: 0, marginBottom: '1em' }}>Porto Restaurants & Bars</h2>
 
+                        {/* Tag Filter */}
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            marginBottom: '16px'
+                        }}>
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                marginBottom: '8px',
+                                gap: '8px',
+                                color: '#555'
+                            }}>
+                                <FontAwesomeIcon icon={faFilter} />
+                                <span>Filter by tag:</span>
+                            </div>
+                            <div style={{
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                gap: '8px'
+                            }}>
+                                {uniqueTags.map(tag => (
+                                    <button
+                                        key={tag}
+                                        onClick={() => setSelectedTag(tag)}
+                                        style={{
+                                            padding: '4px 10px',
+                                            borderRadius: '16px',
+                                            border: 'none',
+                                            background: selectedTag === tag ? '#1976d2' : '#e0e0e0',
+                                            color: selectedTag === tag ? 'white' : '#555',
+                                            cursor: 'pointer',
+                                            fontSize: '0.9em',
+                                            fontWeight: selectedTag === tag ? 'bold' : 'normal',
+                                            transition: 'all 0.2s ease'
+                                        }}
+                                    >
+                                        {tag}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                            {food.map((place, idx) => {
+                            {filteredFood.map((place, idx) => {
                                 const iconData = getVenueIcon(place.Venue);
 
                                 return (
@@ -341,7 +396,11 @@ function Food() {
                                             ':hover': { backgroundColor: '#f0f0f0' }
                                         }}
                                         onClick={() => {
-                                            setActivePlace(idx);
+                                            const originalIndex = food.findIndex(item =>
+                                                item.Latitude === place.Latitude &&
+                                                item.Longitude === place.Longitude
+                                            );
+                                            setActivePlace(originalIndex);
                                             setShowListModal(false);
                                             if (map) {
                                                 map.panTo({ lat: place.Latitude, lng: place.Longitude });
