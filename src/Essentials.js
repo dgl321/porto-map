@@ -301,7 +301,9 @@ function Essentials() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
-                }}>
+                }}
+                    onClick={() => setShowListModal(false)}
+                >
                     <div style={{
                         background: 'white',
                         borderRadius: 10,
@@ -312,7 +314,9 @@ function Essentials() {
                         overflowY: 'auto',
                         position: 'relative',
                         boxShadow: '0 4px 24px rgba(0,0,0,0.18)'
-                    }}>
+                    }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
                         <button
                             style={{
                                 position: 'absolute',
