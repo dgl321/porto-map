@@ -97,5 +97,14 @@
         "Price": "€",
         "Venue": "Pharmacy",
         "Tags": "Pharmacy"
+    },
+    {
+        "Place": "Armazém da Cerveja",
+        "Address": "R. Formosa 130, 4000-254 Porto, Portugal",
+        "Latitude": 41.147675059376986,
+        "Longitude": -8.603755717589117,
+        "Price": "€",
+        "Venue": "Off-license",
+        "Tags": "Off-license"
     }
 ]
