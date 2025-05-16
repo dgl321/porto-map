@@ -2,9 +2,8 @@
     {
         "Place": "A Pérola do Bolhão",
         "Address": "Rua Formosa 279, 4000-252 Porto",
-        "Latitude": 41.149600,
-        "Longitude": -8.606500,
-        "Price": "€",
+        "Latitude": 41.14837922865039,
+        "Longitude": -8.606651499872164,
         "Venue": "Supermarket",
         "Tags": "Supermarket"
     },
@@ -13,7 +12,6 @@
         "Address": "Rua Formosa 305, 4000-252 Porto",
         "Latitude": 41.149800,
         "Longitude": -8.606200,
-        "Price": "€",
         "Venue": "Supermarket",
         "Tags": "Supermarket"
     },
@@ -22,16 +20,22 @@
         "Address": "Rua Formosa 300, 4000-248 Porto",
         "Latitude": 41.148600,
         "Longitude": -8.606800,
-        "Price": "€€",
         "Venue": "Supermarket",
         "Tags": "Supermarket"
     },
     {
-        "Place": "Pingo Doce",
-        "Address": "Rua de Fernandes Tomás 579, 4000-217 Porto",
-        "Latitude": 41.150000,
-        "Longitude": -8.605000,
-        "Price": "€",
+        "Place": "Pingo Doce (Sá da Bandeira)",
+        "Address": "R. de Sá da Bandeira 385, 4000-270 Porto, Portugal",
+        "Latitude": 41.14968182177765,
+        "Longitude": -8.607564659683089,
+        "Venue": "Supermarket",
+        "Tags": "Supermarket"
+    },
+    {
+        "Place": "Minipreço",
+        "Address": "R. de Sá da Bandeira 355, 4000-435 Porto, Portugal",
+        "Latitude": 41.14968182177765,
+        "Longitude": -8.607564659683089,
         "Venue": "Supermarket",
         "Tags": "Supermarket"
     },
@@ -110,5 +114,29 @@
         "Longitude": -8.605460884911398,
         "Venue": "Grocery",
         "Tags": "Off-license"
+    },
+    {
+        "Place": "Lidl",
+        "Address": "R. Monsenhor Fonseca Soares 291 329, 4150-335 Porto, Portugal",
+        "Latitude": 41.157914582809475,
+        "Longitude": -8.633603669076312,
+        "Venue": "Supermarket",
+        "Tags": "Supermarket"
+    },
+    {
+        "Place": "Froiz",
+        "Address": "Galeria Trindade Domus, R. dos Heróis e dos Mártires de Angola 11, 4000-285 Porto, Portugal",
+        "Latitude": 41.151224698212346,
+        "Longitude": -8.610881185866495,
+        "Venue": "Supermarket",
+        "Tags": "Supermarket"
+    },
+    {
+        "Place": "Pingo Doce (Passos Manuel)",
+        "Address": "R. de Passos Manuel 221 223, 4000-385 Porto, Portugal",
+        "Latitude": 41.14677121207826,
+        "Longitude": -8.604672768146969,
+        "Venue": "Supermarket",
+        "Tags": "Supermarket"
     }
 ]
