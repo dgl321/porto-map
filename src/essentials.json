@@ -106,5 +106,14 @@
         "Price": "€",
         "Venue": "Off-license",
         "Tags": "Off-license"
+    },
+    {
+        "Place": "Casa Cerdeira Mercearia",
+        "Address": "R. de Santa Catarina 533, 4000-453 Porto, Portugal",
+        "Latitude": 41.150914653614585,
+        "Longitude": -8.605460884911398,
+        "Price": "€",
+        "Venue": "Grocery",
+        "Tags": "Off-license"
     }
 ]
