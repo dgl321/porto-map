@@ -67,7 +67,6 @@
         "Address": "Rua Formosa 93, 4000-250 Porto",
         "Latitude": 41.148000,
         "Longitude": -8.607000,
-        "Price": "€€",
         "Venue": "Off-license",
         "Tags": "Off-license"
     },
@@ -76,7 +75,6 @@
         "Address": "Rua Formosa 327, 4000-252 Porto",
         "Latitude": 41.149700,
         "Longitude": -8.606000,
-        "Price": "€",
         "Venue": "Pharmacy",
         "Tags": "Pharmacy"
     },
@@ -85,7 +83,6 @@
         "Address": "Rua da Alegria 796, 4000-044 Porto",
         "Latitude": 41.150800,
         "Longitude": -8.602700,
-        "Price": "€",
         "Venue": "Pharmacy",
         "Tags": "Pharmacy"
     },
@@ -94,7 +91,6 @@
         "Address": "Rua de Serpa Pinto 12, 4050-582 Porto",
         "Latitude": 41.145600,
         "Longitude": -8.611500,
-        "Price": "€",
         "Venue": "Pharmacy",
         "Tags": "Pharmacy"
     },
@@ -112,7 +108,6 @@
         "Address": "R. de Santa Catarina 533, 4000-453 Porto, Portugal",
         "Latitude": 41.150914653614585,
         "Longitude": -8.605460884911398,
-        "Price": "€",
         "Venue": "Grocery",
         "Tags": "Off-license"
     }
