@@ -60,6 +60,9 @@ function Essentials() {
     const [showListModal, setShowListModal] = useState(false);
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
+    // Sort essentials alphabetically
+    const sortedEssentials = [...essentials].sort((a, b) => a.Place.localeCompare(b.Place));
+
     const onLoad = useCallback((map) => {
         setMap(map);
     }, []);
@@ -118,7 +121,7 @@ function Essentials() {
                                 icon={createMarkerIcon(ICONS.airbnb)}
                             />
 
-                            {essentials.map((place, idx) => {
+                            {sortedEssentials.map((place, idx) => {
                                 const iconData = getVenueIcon(place.Venue);
                                 const icon = createMarkerIcon(iconData);
 
@@ -126,7 +129,10 @@ function Essentials() {
                                     <Marker
                                         key={idx}
                                         position={{ lat: place.Latitude, lng: place.Longitude }}
-                                        onClick={() => setActivePlace(idx)}
+                                        onClick={() => setActivePlace(essentials.findIndex(e =>
+                                            e.Latitude === place.Latitude &&
+                                            e.Longitude === place.Longitude
+                                        ))}
                                         icon={icon}
                                     />
                                 ) : null;
@@ -329,7 +335,7 @@ function Essentials() {
                         <h2 style={{ marginTop: 0, marginBottom: '1em' }}>Nearby Essentials</h2>
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                            {essentials.map((place, idx) => {
+                            {sortedEssentials.map((place, idx) => {
                                 const iconData = getVenueIcon(place.Venue);
 
                                 return (
@@ -345,7 +351,10 @@ function Essentials() {
                                             ':hover': { backgroundColor: '#f0f0f0' }
                                         }}
                                         onClick={() => {
-                                            setActivePlace(idx);
+                                            setActivePlace(essentials.findIndex(e =>
+                                                e.Latitude === place.Latitude &&
+                                                e.Longitude === place.Longitude
+                                            ));
                                             setShowListModal(false);
                                             if (map) {
                                                 map.panTo({ lat: place.Latitude, lng: place.Longitude });

@@ -63,8 +63,9 @@ function Food() {
 
     // Filter food items based on selected tag
     const filteredFood = selectedTag === 'All'
-        ? food
-        : food.filter(item => item.Tags === selectedTag);
+        ? [...food].sort((a, b) => a.Place.localeCompare(b.Place))
+        : [...food].filter(item => item.Tags === selectedTag)
+            .sort((a, b) => a.Place.localeCompare(b.Place));
 
     const onLoad = useCallback((map) => {
         setMap(map);

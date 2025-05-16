@@ -89,8 +89,9 @@ function Places() {
 
     // Filter places based on selected category
     const filteredPlaces = selectedCategory === 'All'
-        ? places
-        : places.filter(place => getCategory(place) === selectedCategory);
+        ? [...places].sort((a, b) => a.Place.localeCompare(b.Place))
+        : [...places].filter(place => getCategory(place) === selectedCategory)
+            .sort((a, b) => a.Place.localeCompare(b.Place));
 
     const onLoad = useCallback((map) => {
         setMap(map);
