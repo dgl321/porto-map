@@ -288,5 +288,45 @@
         "Venue": "Restaurant",
         "Tags": "Food",
         "Specialty": "Light bites"
+    },
+    {
+        "Place": "Eleven Lab",
+        "Address": "R. de José Falcão 138 144, 4050-315 Porto, PortugalR. Das Oliveiras 8, 4050-159 Porto, Portugal",
+        "Latitude": 41.14917742520961,
+        "Longitude": -8.613931052284727,
+        "Price": "€€",
+        "Venue": "Café",
+        "Tags": "Breakfast",
+        "Specialty": "Brunch"
+    },
+    {
+        "Place": "Florista Café",
+        "Address": "R. das Flores 146, 4050-263 Porto, Portugal",
+        "Latitude": 41.14424188053011,
+        "Longitude": -8.613052199362736,
+        "Price": "€",
+        "Venue": "Café",
+        "Tags": "Breakfast",
+        "Specialty": "Brunch"
+    },
+    {
+        "Place": "Mafalda's",
+        "Address": "Rua França Júnior - Mercado Municipal Matosinhos, Loja 29, Matosinhos 4450-135",
+        "Latitude": 41.18666278672798,
+        "Longitude": -8.693115478761502,
+        "Price": "€€",
+        "Venue": "Restaurant",
+        "Tags": "Breakfast",
+        "Specialty": "Brunch"
+    },
+    {
+        "Place": "ROSA ET AL.",
+        "Address": "R. do Rosário 233, 4050-524 Porto, Portugal",
+        "Latitude": 41.150481374898085,
+        "Longitude": -8.621103786270831,
+        "Price": "€€",
+        "Venue": "Restaurant",
+        "Tags": "Breakfast",
+        "Specialty": "Brunch"
     }
 ]
