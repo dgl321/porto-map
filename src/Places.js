@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faMonument, faLandmark, faBagShopping, faUtensils, faWineGlass, faLocationPin, faMusic, faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faMonument, faLandmark, faBagShopping, faUtensils, faWineGlass, faLocationPin, faMusic, faHouse, faList, faFilter, faMapPin } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import places from './places.json';
 import FloatingMenu from './FloatingMenu';
@@ -9,7 +9,7 @@ import './MapStyles.css';
 import { applyGestureHandlingFix } from './GoogleMapsController';
 
 // Add icons to library
-library.add(faMonument, faLandmark, faBagShopping, faUtensils, faWineGlass, faLocationPin, faMusic, faHouse);
+library.add(faMonument, faLandmark, faBagShopping, faUtensils, faWineGlass, faLocationPin, faMusic, faHouse, faList, faFilter, faMapPin);
 
 const PORTO_CENTER = { lat: 41.145, lng: -8.612 };
 const AIRBNB_LOCATION = { lat: 41.14916943789735, lng: -8.609004400792529 }; // R. Formosa 414 1, 4000-249 Porto
@@ -45,6 +45,10 @@ const ICONS = {
         icon: faMusic,
         color: '#9c27b0' // Purple
     },
+    area: {
+        icon: faMapPin,
+        color: '#00796b' // Teal
+    },
     airbnb: {
         icon: faHouse,
         color: '#e91e63' // Pink
@@ -63,6 +67,7 @@ function getCategory(place) {
     if (name.includes('burmester') || name.includes('Graham') || name.includes('bar')) return 'drinks';
     if (name.includes('clérigos') || name.includes('chapel') || name.includes('são bento') || name.includes('funicular')) return 'landmark';
     if (name.includes('music') || name.includes('fado') || name.includes('dance') || name.includes('show')) return 'music';
+    if (name.includes('douro valley') || name.includes('gaia') || name.includes('foz') || name.includes('ribeira')) return 'area';
     return 'default';
 }
 
@@ -70,7 +75,21 @@ function Places() {
     const [activePlace, setActivePlace] = useState(null);
     const [showAirbnb, setShowAirbnb] = useState(false);
     const [showLegend, setShowLegend] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState('All');
+    const [map, setMap] = useState(null);
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
+    // Get all unique categories
+    const categories = ['All', ...Object.keys(ICONS).filter(cat => cat !== 'default')];
+
+    // Filter places based on selected category
+    const filteredPlaces = selectedCategory === 'All'
+        ? places
+        : places.filter(place => getCategory(place) === selectedCategory);
+
+    const onLoad = useCallback((map) => {
+        setMap(map);
+    }, []);
 
     // Apply the gesture handling fix when component mounts
     useEffect(() => {
@@ -97,6 +116,7 @@ function Places() {
                     center={PORTO_CENTER}
                     zoom={14}
                     gestureHandling="greedy"
+                    onLoad={onLoad}
                     options={{
                         fullscreenControl: true,
                         zoomControl: true,
@@ -156,23 +176,26 @@ function Places() {
                         </InfoWindow>
                     )}
 
-                    {places.map((place, idx) => (
-                        <Marker
-                            key={idx}
-                            position={{ lat: place.Latitude, lng: place.Longitude }}
-                            onClick={() => setActivePlace(idx)}
-                            icon={{
-                                path: ICONS[getCategory(place)].icon.icon[4],
-                                fillColor: ICONS[getCategory(place)].color,
-                                fillOpacity: 1,
-                                strokeWeight: 1,
-                                strokeColor: '#ffffff',
-                                scale: 0.05,
-                                anchor: { x: 1.5, y: 1.5 },
-                                scaledSize: { width: 30, height: 30 }
-                            }}
-                        />
-                    ))}
+                    {(selectedCategory === 'All' ? places : filteredPlaces).map((place, idx) => {
+                        const category = getCategory(place);
+                        return (
+                            <Marker
+                                key={idx}
+                                position={{ lat: place.Latitude, lng: place.Longitude }}
+                                onClick={() => setActivePlace(idx)}
+                                icon={{
+                                    path: ICONS[category].icon.icon[4],
+                                    fillColor: ICONS[category].color,
+                                    fillOpacity: 1,
+                                    strokeWeight: 1,
+                                    strokeColor: '#ffffff',
+                                    scale: 0.05,
+                                    anchor: { x: 1.5, y: 1.5 },
+                                    scaledSize: { width: 30, height: 30 }
+                                }}
+                            />
+                        );
+                    })}
                     {activePlace !== null && (
                         <InfoWindow
                             position={{
@@ -229,19 +252,22 @@ function Places() {
                     background: '#1976d2',
                     color: 'white',
                     cursor: 'pointer',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
                 }}
                 onClick={() => setShowLegend(true)}
             >
-                Legend
+                <FontAwesomeIcon icon={faList} /> Places List
             </button>
             {/* Legend Modal */}
             {showLegend && (
                 <div style={{
                     position: 'fixed',
                     top: 0, left: 0, right: 0, bottom: 0,
-                    background: 'rgba(0,0,0,0.3)',
-                    zIndex: 1300,
+                    background: 'rgba(0,0,0,0.5)',
+                    zIndex: 2000,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
@@ -249,23 +275,26 @@ function Places() {
                     <div style={{
                         background: 'white',
                         borderRadius: 10,
-                        padding: '1.5em 2em',
+                        padding: '1.5em',
+                        maxWidth: '90%',
+                        width: '500px',
                         maxHeight: '80vh',
                         overflowY: 'auto',
-                        minWidth: 280,
-                        boxShadow: '0 4px 24px rgba(0,0,0,0.18)',
-                        position: 'relative'
+                        position: 'relative',
+                        boxShadow: '0 4px 24px rgba(0,0,0,0.18)'
                     }}>
                         <button
                             style={{
                                 position: 'absolute',
                                 top: 16,
-                                right: 24,
+                                right: 16,
                                 background: 'transparent',
                                 border: 'none',
                                 fontSize: '1.5em',
                                 cursor: 'pointer',
-                                color: '#888'
+                                color: '#888',
+                                padding: 0,
+                                lineHeight: 1
                             }}
                             onClick={() => setShowLegend(false)}
                             aria-label="Close"
@@ -273,22 +302,123 @@ function Places() {
                         >
                             ×
                         </button>
-                        <h3 style={{ marginTop: 0 }}>Legend</h3>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                            {Object.entries(ICONS).map(([cat, iconData]) => (
-                                <li key={cat} style={{ marginBottom: 12, display: 'flex', alignItems: 'center' }}>
-                                    <FontAwesomeIcon
-                                        icon={iconData.icon}
+                        <h2 style={{ marginTop: 0, marginBottom: '1em' }}>Porto Places of Interest</h2>
+
+                        {/* Category Filter */}
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            marginBottom: '16px'
+                        }}>
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                marginBottom: '8px',
+                                gap: '8px',
+                                color: '#555'
+                            }}>
+                                <FontAwesomeIcon icon={faFilter} />
+                                <span>Filter by category:</span>
+                            </div>
+                            <div style={{
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                gap: '8px'
+                            }}>
+                                {categories.map(category => (
+                                    <button
+                                        key={category}
+                                        onClick={() => setSelectedCategory(category)}
                                         style={{
-                                            color: iconData.color,
-                                            fontSize: '24px',
-                                            marginRight: '10px'
+                                            padding: '4px 10px',
+                                            borderRadius: '16px',
+                                            border: 'none',
+                                            background: selectedCategory === category ? '#1976d2' : '#e0e0e0',
+                                            color: selectedCategory === category ? 'white' : '#555',
+                                            cursor: 'pointer',
+                                            fontSize: '0.9em',
+                                            fontWeight: selectedCategory === category ? 'bold' : 'normal',
+                                            transition: 'all 0.2s ease',
+                                            textTransform: 'capitalize'
                                         }}
-                                    />
-                                    <span style={{ textTransform: 'capitalize' }}>{cat}</span>
-                                </li>
-                            ))}
-                        </ul>
+                                    >
+                                        {category}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Places List */}
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                            {filteredPlaces.map((place, idx) => {
+                                const category = getCategory(place);
+                                const iconData = ICONS[category];
+
+                                return (
+                                    <div
+                                        key={idx}
+                                        style={{
+                                            padding: '12px',
+                                            borderRadius: '8px',
+                                            border: '1px solid #eee',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.2s ease',
+                                            backgroundColor: '#f9f9f9'
+                                        }}
+                                        onClick={() => {
+                                            setActivePlace(places.findIndex(p =>
+                                                p.Latitude === place.Latitude &&
+                                                p.Longitude === place.Longitude
+                                            ));
+                                            setShowLegend(false);
+                                            if (map) {
+                                                map.panTo({ lat: place.Latitude, lng: place.Longitude });
+                                                map.setZoom(16);
+                                            }
+                                        }}
+                                    >
+                                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                            <FontAwesomeIcon
+                                                icon={iconData.icon}
+                                                style={{
+                                                    color: iconData.color,
+                                                    fontSize: '24px',
+                                                    minWidth: '24px'
+                                                }}
+                                            />
+                                            <div>
+                                                <div style={{ fontWeight: 'bold', fontSize: '1.1em' }}>
+                                                    {place.Place}
+                                                </div>
+                                                <div style={{
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    gap: '8px',
+                                                    marginTop: '4px',
+                                                    fontSize: '0.9em',
+                                                    color: '#666'
+                                                }}>
+                                                    <span style={{
+                                                        background: '#e8f5e9',
+                                                        padding: '2px 6px',
+                                                        borderRadius: '4px',
+                                                        textTransform: 'capitalize'
+                                                    }}>
+                                                        {category}
+                                                    </span>
+                                                    {place.Address && (
+                                                        <span style={{ fontSize: '0.9em', color: '#777' }}>
+                                                            {place.Address.substring(0, 30)}
+                                                            {place.Address.length > 30 ? '...' : ''}
+                                                        </span>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
             )}

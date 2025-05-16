@@ -98,7 +98,25 @@
     {
         "Place": "Foz do Douro",
         "Address": "Foz do Douro, Portugal",
-        "Longitude": -8.617796706163476,
+        "Longitude": -8.674608017924395,
         "Latitude": 41.1517951
+    },
+    {
+        "Place": "Ribeira",
+        "Address": "Ribeira, Portugal",
+        "Longitude": -8.61028282123101,
+        "Latitude": 41.14326446159634
+    },
+    {
+        "Place": "Douro Valley",
+        "Address": "Douro Valley, Portugal",
+        "Longitude": -5.506138190635497,
+        "Latitude": 41.53036332778854
+    },
+    {
+        "Place": "Vila Nova de Gaia",
+        "Address": "Vila Nova de Gaia, Portugal",
+        "Longitude": -8.614009,
+        "Latitude": 41.137509
     }
 ]
