@@ -363,14 +363,74 @@
         "Website": "https://www.instagram.com/rosaetal.pt/"
     },
     {
-        "Place":"Venham mais 5",
-        "Address":"R. de Santo Ildefonso 219, 4000-470 Porto, Portugal",
+        "Place": "Venham mais 5",
+        "Address": "R. de Santo Ildefonso 219, 4000-470 Porto, Portugal",
         "Latitude": 41.14672186543933,
-        "Longitude":-8.603393431884891,
-        "Price":"€",
-        "Venue":"Restaurant",
-        "Tags":"Lunch",
-        "Specialty":"Traditional",
-        "Website":"https://www.instagram.com/venhammais5.original//"
+        "Longitude": -8.603393431884891,
+        "Price": "€",
+        "Venue": "Restaurant",
+        "Tags": "Lunch",
+        "Specialty": "Traditional",
+        "Website": "https://www.instagram.com/venhammais5.original//"
+    },
+    {
+        "Place": "Marisqueira Do Porto",
+        "Address": "Rua do Campo Alegre 110, 4150-168 Porto, Portugal",
+        "Latitude": 41.152696323004754,
+        "Longitude": -8.629133702843708,
+        "Price": "€€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Seafood",
+        "Website": "https://www.instagram.com/marisqueiradoporto/?hl=en"
+    },
+    {
+        "Place": "Brasão Foz Brewery",
+        "Address": "R. de Gondarém 487, 4150-377 Porto, Portugal",
+        "Latitude": 41.15724459170459,
+        "Longitude": -8.680875523823449,
+        "Price": "€€",
+        "Venue": "Bar",
+        "Tags": "Lunch",
+        "Specialty": [
+            "Francesinha",
+            "Beer"
+        ],
+        "Website": "https://www.instagram.com/marisqueiradoporto/?hl=en"
+    },
+    {
+        "Place": "Luca",
+        "Address": "Rua do Teatro 133, 4150-274 Porto, Portugal",
+        "Latitude": 41.1531419434567,
+        "Longitude": -8.676549650168145,
+        "Price": "€€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": [
+            "Italian",
+            "Seafood"
+        ]
+    },
+    {
+        "Place": " Praia de Gondarém",
+        "Address": "Av. do Brasil 561, 4150-155 Porto, Portugal",
+        "Latitude": 41.156268357164166,
+        "Longitude": -8.681480141347187,
+        "Price": "€",
+        "Venue": "Bar",
+        "Tags": "Drinks",
+        "Specialty": "Beach Vibes",
+        "Website": "http://www.forshake.pt/"
+    },
+    {
+        "Place": "Lapa Lapa",
+        "Address": "Av. do Brasil, 4150-185 Porto, Portugal",
+        "Latitude": 41.15925907752712,
+        "Longitude": -8.684431002449443,
+        "Price": "€€",
+        "Venue": "Restaurant",
+        "Tags": "Dinner",
+        "Specialty": "Seafood",
+        "Website": "https://www.instagram.com/lapa.lapa.porto/"
     }
 ]

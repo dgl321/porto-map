@@ -110,13 +110,31 @@
     {
         "Place": "Douro Valley",
         "Address": "Douro Valley, Portugal",
-        "Longitude": -8.08213030096469,
-        "Latitude": 41.53036332778854
+        "Longitude": -8.082858,
+        "Latitude": 41.273533
     },
     {
         "Place": "Vila Nova de Gaia",
         "Address": "Vila Nova de Gaia, Portugal",
         "Longitude": -8.614009,
         "Latitude": 41.137509
+    },
+    {
+        "Place": "Praia do Carneiro",
+        "Address": "Av. de Dom Carlos I 3188, Porto, Portugal",
+        "Longitude": -8.67590270180944,
+        "Latitude": 41.14873193515606
+    },
+    {
+        "Place": "Praia dos Ingleses",
+        "Address": "R. Cel. Raúl Peres, 4150-000 Porto, Portugal",
+        "Longitude": -8.678220029474339,
+        "Latitude": 41.15208925782841
+    },
+    {
+        "Place": "Pérgola da Nevogilde",
+        "Address": "Av. do Brasil 694, 4150-378 Porto, Portugal",
+        "Longitude": -8.683028566502456,
+        "Latitude": 41.151000000000004
     }
 ]

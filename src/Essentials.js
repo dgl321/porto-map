@@ -214,14 +214,25 @@ function Essentials() {
                                     marginBottom: 12
                                 }}>
                                     {essentials[activePlace].Tags && (
-                                        <span style={{
-                                            background: '#e3f2fd',
-                                            padding: '4px 8px',
-                                            borderRadius: 12,
-                                            fontSize: '0.85em'
-                                        }}>
-                                            {essentials[activePlace].Tags}
-                                        </span>
+                                        Array.isArray(essentials[activePlace].Tags)
+                                            ? essentials[activePlace].Tags.map((tag, i) => (
+                                                <span key={i} style={{
+                                                    background: '#e3f2fd',
+                                                    padding: '4px 8px',
+                                                    borderRadius: 12,
+                                                    fontSize: '0.85em'
+                                                }}>
+                                                    {tag}
+                                                </span>
+                                            ))
+                                            : <span style={{
+                                                background: '#e3f2fd',
+                                                padding: '4px 8px',
+                                                borderRadius: 12,
+                                                fontSize: '0.85em'
+                                            }}>
+                                                {essentials[activePlace].Tags}
+                                            </span>
                                     )}
                                 </div>
                                 <a
@@ -373,6 +384,27 @@ function Essentials() {
                                                         }}>
                                                             {place.Price}
                                                         </span>
+                                                    )}
+                                                    {place.Tags && (
+                                                        Array.isArray(place.Tags)
+                                                            ? place.Tags.map((tag, i) => (
+                                                                <span key={i} style={{
+                                                                    background: '#e3f2fd',
+                                                                    padding: '2px 6px',
+                                                                    borderRadius: '4px',
+                                                                    fontSize: '0.9em'
+                                                                }}>
+                                                                    {tag}
+                                                                </span>
+                                                            ))
+                                                            : <span style={{
+                                                                background: '#e3f2fd',
+                                                                padding: '2px 6px',
+                                                                borderRadius: '4px',
+                                                                fontSize: '0.9em'
+                                                            }}>
+                                                                {place.Tags}
+                                                            </span>
                                                     )}
                                                 </div>
                                             </div>

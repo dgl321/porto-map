@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faMonument, faLandmark, faBagShopping, faUtensils, faWineGlass, faLocationPin, faMusic, faHouse, faList, faFilter, faMapPin } from '@fortawesome/free-solid-svg-icons';
+import { faMonument, faLandmark, faBagShopping, faUtensils, faWineGlass, faLocationPin, faMusic, faHouse, faList, faFilter, faMapPin, faUmbrellaBeach } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import places from './places.json';
 import FloatingMenu from './FloatingMenu';
@@ -9,7 +9,7 @@ import './MapStyles.css';
 import { applyGestureHandlingFix } from './GoogleMapsController';
 
 // Add icons to library
-library.add(faMonument, faLandmark, faBagShopping, faUtensils, faWineGlass, faLocationPin, faMusic, faHouse, faList, faFilter, faMapPin);
+library.add(faMonument, faLandmark, faBagShopping, faUtensils, faWineGlass, faLocationPin, faMusic, faHouse, faList, faFilter, faMapPin, faUmbrellaBeach);
 
 const PORTO_CENTER = { lat: 41.145, lng: -8.612 };
 const AIRBNB_LOCATION = { lat: 41.14916943789735, lng: -8.609004400792529 }; // R. Formosa 414 1, 4000-249 Porto
@@ -49,6 +49,10 @@ const ICONS = {
         icon: faMapPin,
         color: '#00796b' // Teal
     },
+    beach: {
+        icon: faUmbrellaBeach,
+        color: '#039be5' // Light Blue
+    },
     airbnb: {
         icon: faHouse,
         color: '#e91e63' // Pink
@@ -67,6 +71,7 @@ function getCategory(place) {
     if (name.includes('burmester') || name.includes('Graham') || name.includes('bar')) return 'drinks';
     if (name.includes('clérigos') || name.includes('chapel') || name.includes('são bento') || name.includes('funicular')) return 'landmark';
     if (name.includes('music') || name.includes('fado') || name.includes('dance') || name.includes('show')) return 'music';
+    if (name.includes('praia') || name.includes('beach') || name.includes('pérgola')) return 'beach';
     if (name.includes('douro valley') || name.includes('gaia') || name.includes('foz') || name.includes('ribeira')) return 'area';
     return 'default';
 }
@@ -211,6 +216,35 @@ function Places() {
                                 {places[activePlace].Address && (
                                     <div style={{ marginBottom: 8 }}>
                                         {places[activePlace].Address}
+                                    </div>
+                                )}
+                                {places[activePlace].Tags && (
+                                    <div style={{
+                                        display: 'flex',
+                                        flexWrap: 'wrap',
+                                        gap: 4,
+                                        marginBottom: 8
+                                    }}>
+                                        {Array.isArray(places[activePlace].Tags)
+                                            ? places[activePlace].Tags.map((tag, i) => (
+                                                <span key={i} style={{
+                                                    background: '#e3f2fd',
+                                                    padding: '4px 8px',
+                                                    borderRadius: 12,
+                                                    fontSize: '0.85em'
+                                                }}>
+                                                    {tag}
+                                                </span>
+                                            ))
+                                            : <span style={{
+                                                background: '#e3f2fd',
+                                                padding: '4px 8px',
+                                                borderRadius: 12,
+                                                fontSize: '0.85em'
+                                            }}>
+                                                {places[activePlace].Tags}
+                                            </span>
+                                        }
                                     </div>
                                 )}
                                 <a
@@ -411,6 +445,28 @@ function Places() {
                                                             {place.Address.substring(0, 30)}
                                                             {place.Address.length > 30 ? '...' : ''}
                                                         </span>
+                                                    )}
+                                                    {place.Tags && (
+                                                        <div style={{
+                                                            display: 'flex',
+                                                            flexWrap: 'wrap',
+                                                            gap: 4,
+                                                            marginTop: 4
+                                                        }}>
+                                                            {Array.isArray(place.Tags)
+                                                                ? place.Tags.map((tag, i) => (
+                                                                    <span key={i} style={{
+                                                                        background: '#e3f2fd',
+                                                                        padding: '2px 6px',
+                                                                        borderRadius: 8,
+                                                                        fontSize: '0.8em'
+                                                                    }}>
+                                                                        {tag}
+                                                                    </span>
+                                                                ))
+                                                                : null
+                                                            }
+                                                        </div>
                                                     )}
                                                 </div>
                                             </div>

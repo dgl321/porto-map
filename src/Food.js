@@ -233,14 +233,25 @@ function Food() {
                                         </span>
                                     )}
                                     {food[activePlace].Specialty && (
-                                        <span style={{
-                                            background: '#e8f5e9',
-                                            padding: '4px 8px',
-                                            borderRadius: 12,
-                                            fontSize: '0.85em'
-                                        }}>
-                                            {food[activePlace].Specialty}
-                                        </span>
+                                        Array.isArray(food[activePlace].Specialty)
+                                            ? food[activePlace].Specialty.map((specialty, i) => (
+                                                <span key={i} style={{
+                                                    background: '#e8f5e9',
+                                                    padding: '4px 8px',
+                                                    borderRadius: 12,
+                                                    fontSize: '0.85em'
+                                                }}>
+                                                    {specialty}
+                                                </span>
+                                            ))
+                                            : <span style={{
+                                                background: '#e8f5e9',
+                                                padding: '4px 8px',
+                                                borderRadius: 12,
+                                                fontSize: '0.85em'
+                                            }}>
+                                                {food[activePlace].Specialty}
+                                            </span>
                                     )}
                                 </div>
                                 <a
@@ -441,14 +452,25 @@ function Food() {
                                                         </span>
                                                     )}
                                                     {place.Specialty && (
-                                                        <span style={{
-                                                            background: '#e8f5e9',
-                                                            padding: '2px 6px',
-                                                            borderRadius: '4px',
-                                                            fontSize: '0.9em'
-                                                        }}>
-                                                            {place.Specialty}
-                                                        </span>
+                                                        Array.isArray(place.Specialty)
+                                                            ? place.Specialty.map((specialty, i) => (
+                                                                <span key={i} style={{
+                                                                    background: '#e8f5e9',
+                                                                    padding: '2px 6px',
+                                                                    borderRadius: '4px',
+                                                                    fontSize: '0.9em'
+                                                                }}>
+                                                                    {specialty}
+                                                                </span>
+                                                            ))
+                                                            : <span style={{
+                                                                background: '#e8f5e9',
+                                                                padding: '2px 6px',
+                                                                borderRadius: '4px',
+                                                                fontSize: '0.9em'
+                                                            }}>
+                                                                {place.Specialty}
+                                                            </span>
                                                     )}
                                                 </div>
                                             </div>
