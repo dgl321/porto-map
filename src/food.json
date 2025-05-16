@@ -7,7 +7,8 @@
         "Price": "€",
         "Venue": "Café",
         "Tags": "Lunch",
-        "Specialty": "Francesinha"
+        "Specialty": "Francesinha",
+        "Website": "https://cafesantiago.pt/"
     },
     {
         "Place": "O Diplomata",
@@ -17,7 +18,8 @@
         "Price": "€",
         "Venue": "Café",
         "Tags": "Breakfast",
-        "Specialty": "Pancakes"
+        "Specialty": "Pancakes",
+        "Website": "https://o-diplomata.eatbu.com/?lang=en"
     },
     {
         "Place": "Reitoria",
@@ -27,7 +29,8 @@
         "Price": "€€€",
         "Venue": "Restaurant",
         "Tags": "Dinner",
-        "Specialty": "Italian"
+        "Specialty": "Italian",
+        "Website": "https://www.reitoria.pt/"
     },
     {
         "Place": "O Fado",
@@ -37,7 +40,8 @@
         "Price": "€€€",
         "Venue": "Restaurant",
         "Tags": "Dinner",
-        "Specialty": "Traditional"
+        "Specialty": "Traditional",
+        "Website": "https://ofado.com/en/"
     },
     {
         "Place": "The Royal Cocktail Club",
@@ -47,7 +51,8 @@
         "Price": "",
         "Venue": "Bar",
         "Tags": "Drinks",
-        "Specialty": "Cocktails"
+        "Specialty": "Cocktails",
+        "Website": "https://the-royal-cocktail-club.com-fnb.com/"
     },
     {
         "Place": "Ferro Bar",
@@ -57,7 +62,8 @@
         "Price": "",
         "Venue": "Bar",
         "Tags": "Drinks",
-        "Specialty": "Cocktails"
+        "Specialty": "Cocktails",
+        "Website": "https://www.instagram.com/ferro.bar/?hl=en"
     },
     {
         "Place": "Manteigaria (Bolhão)",
@@ -67,7 +73,8 @@
         "Price": "€",
         "Venue": "Café",
         "Tags": "Snacks",
-        "Specialty": "Pastéis de nata"
+        "Specialty": "Pastéis de nata",
+        "Website": "https://manteigaria.com/en/"
     },
     {
         "Place": "Casa de Pasto da Palmeira",
@@ -77,7 +84,8 @@
         "Price": "€",
         "Venue": "Restaurant",
         "Tags": "Dinner",
-        "Specialty": "Seafood"
+        "Specialty": "Seafood",
+        "Website": "https://www.instagram.com/casadepastodapalmeira/?hl=en"
     },
     {
         "Place": "Taberna Rio Restaurante",
@@ -87,7 +95,8 @@
         "Price": "€",
         "Venue": "Restaurant",
         "Tags": "Dinner",
-        "Specialty": "Mediterranean"
+        "Specialty": "Mediterranean",
+        "Website": "https://tabernario.pt/en/"
     },
     {
         "Place": "Restaurante Cantina 32",
@@ -97,7 +106,8 @@
         "Price": "€€",
         "Venue": "Restaurant",
         "Tags": "Dinner",
-        "Specialty": "Seafood"
+        "Specialty": "Seafood",
+        "Website": "https://www.cantina32.com/en/"
     },
     {
         "Place": "Oficina dos Rissóis",
@@ -107,7 +117,8 @@
         "Price": "€",
         "Venue": "Restaurant",
         "Tags": "Snacks",
-        "Specialty": "Rissoles"
+        "Specialty": "Rissoles",
+        "Website": "https://www.instagram.com/oficinadosrissois/?hl=en"
     },
     {
         "Place": "Curb",
@@ -117,7 +128,8 @@
         "Price": "€",
         "Venue": "Restaurant",
         "Tags": "Dinner",
-        "Specialty": "Burgers"
+        "Specialty": "Burgers",
+        "Website": "https://curb.pt/"
     },
     {
         "Place": "Pregar",
@@ -127,7 +139,8 @@
         "Price": "€",
         "Venue": "Restaurant",
         "Tags": "Dinner",
-        "Specialty": "Burgers"
+        "Specialty": "Burgers",
+        "Website": "https://pregar.pt/index.php?oid=1020&op=all"
     },
     {
         "Place": "Bota and Bira",
@@ -137,7 +150,8 @@
         "Price": "€",
         "Venue": "Restaurant",
         "Tags": "Snacks",
-        "Specialty": "Tapas"
+        "Specialty": "Tapas",
+        "Website": "https://www.instagram.com/botaebira/?hl=en"
     },
     {
         "Place": "Impar Flores",
@@ -147,7 +161,8 @@
         "Price": "€€",
         "Venue": "Restaurant",
         "Tags": "Dinner",
-        "Specialty": "Italian"
+        "Specialty": "Italian",
+        "Website": "https://www.instagram.com/imparestaurant/?hl=en"
     },
     {
         "Place": "A Despensa",
@@ -157,7 +172,8 @@
         "Price": "€€",
         "Venue": "Restaurant",
         "Tags": "Dinner",
-        "Specialty": "Italian"
+        "Specialty": "Italian",
+        "Website": "https://www.instagram.com/adespensa.pt/?hl=en"
     },
     {
         "Place": "Gazela",
@@ -167,7 +183,8 @@
         "Price": "€",
         "Venue": "Restaurant",
         "Tags": "Dinner",
-        "Specialty": "Cachorrinho"
+        "Specialty": "Cachorrinho",
+        "Website": "https://www.facebook.com/CachorrinhosdaBatalha/"
     },
     {
         "Place": "The House of Brazilian Food",
@@ -177,7 +194,8 @@
         "Price": "€€",
         "Venue": "Restaurant",
         "Tags": "Dinner",
-        "Specialty": "Brazilian"
+        "Specialty": "Brazilian",
+        "Website": "https://www.instagram.com/thehouseofbrazilianfood/"
     },
     {
         "Place": "Adega Leonor",
@@ -187,7 +205,8 @@
         "Price": "€",
         "Venue": "Restaurant",
         "Tags": "Snacks",
-        "Specialty": "Tapas"
+        "Specialty": "Tapas",
+        "Website": "https://www.instagram.com/adega.leonor/"
     },
     {
         "Place": "Base Porto",
@@ -197,7 +216,8 @@
         "Price": "€€",
         "Venue": "Bar",
         "Tags": "Drinks",
-        "Specialty": "Vibes"
+        "Specialty": "Vibes",
+        "Website": "https://www.instagram.com/baseporto/?hl=en"
     },
     {
         "Place": "Torto",
@@ -207,7 +227,8 @@
         "Price": "€€",
         "Venue": "Bar",
         "Tags": "Drinks",
-        "Specialty": "Cocktails"
+        "Specialty": "Cocktails",
+        "Website": "https://www.instagram.com/torto.porto/"
     },
     {
         "Place": "Letraria",
@@ -217,7 +238,8 @@
         "Price": "€",
         "Venue": "Bar",
         "Tags": "Drinks",
-        "Specialty": "Craft beer"
+        "Specialty": "Craft beer",
+        "Website": "https://www.instagram.com/letraria.porto/"
     },
     {
         "Place": "Mirajazz",
@@ -227,7 +249,8 @@
         "Price": "€",
         "Venue": "Bar",
         "Tags": "Drinks",
-        "Specialty": "Vibes"
+        "Specialty": "Vibes",
+        "Website": "https://www.instagram.com/mirajazzporto/"
     },
     {
         "Place": "Padaria Ribeiro",
@@ -237,7 +260,8 @@
         "Price": "€",
         "Venue": "Bakery",
         "Tags": "Lunch",
-        "Specialty": "Sandwiches"
+        "Specialty": "Sandwiches",
+        "Website": "https://www.padariaribeiro.pt/"
     },
     {
         "Place": "Restavrante Dovrvm",
@@ -247,7 +271,8 @@
         "Price": "€",
         "Venue": "Restaurant",
         "Tags": "Dinner",
-        "Specialty": "Traditional"
+        "Specialty": "Traditional",
+        "Website": "https://www.instagram.com/dovrvmrestaurant/"
     },
     {
         "Place": "Almada Terrace",
@@ -257,7 +282,8 @@
         "Price": "€",
         "Venue": "Restaurant",
         "Tags": "Dinner",
-        "Specialty": "Seafood"
+        "Specialty": "Seafood",
+        "Website": "https://www.instagram.com/almadaterrace/"
     },
     {
         "Place": "The Ribs",
@@ -267,7 +293,8 @@
         "Price": "€",
         "Venue": "Restaurant",
         "Tags": "Dinner",
-        "Specialty": "Ribs"
+        "Specialty": "Ribs",
+        "Website": "https://www.instagram.com/theribsporto/"
     },
     {
         "Place": "Tá-Berna Wine & Tapas Bar",
@@ -277,7 +304,8 @@
         "Price": "€",
         "Venue": "Wine Bar",
         "Tags": "Drinks",
-        "Specialty": "Wine"
+        "Specialty": "Wine",
+        "Website": "https://www.instagram.com/taberna.winebar/"
     },
     {
         "Place": "Lareira",
@@ -287,7 +315,8 @@
         "Price": "€",
         "Venue": "Restaurant",
         "Tags": "Lunch",
-        "Specialty": "Light bites"
+        "Specialty": "Light bites",
+        "Website": "https://www.instagram.com/lareiraporto/"
     },
     {
         "Place": "Eleven Lab",
@@ -297,7 +326,8 @@
         "Price": "€€",
         "Venue": "Café",
         "Tags": "Breakfast",
-        "Specialty": "Brunch"
+        "Specialty": "Brunch",
+        "Website": "https://www.instagram.com/elevenlabporto/"
     },
     {
         "Place": "Florista Café",
@@ -307,7 +337,8 @@
         "Price": "€",
         "Venue": "Café",
         "Tags": "Breakfast",
-        "Specialty": "Brunch"
+        "Specialty": "Brunch",
+        "Website": "https://www.instagram.com/floristacafeporto/"
     },
     {
         "Place": "Mafalda's",
@@ -317,7 +348,8 @@
         "Price": "€€",
         "Venue": "Restaurant",
         "Tags": "Breakfast",
-        "Specialty": "Brunch"
+        "Specialty": "Brunch",
+        "Website": "https://www.instagram.com/mafalda.mat/"
     },
     {
         "Place": "ROSA ET AL.",
@@ -327,6 +359,7 @@
         "Price": "€€",
         "Venue": "Restaurant",
         "Tags": "Breakfast",
-        "Specialty": "Brunch"
+        "Specialty": "Brunch",
+        "Website": "https://www.instagram.com/rosaetal.pt/"
     }
 ]
