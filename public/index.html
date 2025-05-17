@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <!-- Favicon for modern browsers nata -->
+  <!-- Favicon for modern browsers -->
   <link rel="icon" type="image/jpg" href="%PUBLIC_URL%/nata.jpg" sizes="192x192" />
   <!-- Apple Touch Icon -->
   <link rel="apple-touch-icon" type="image/jpg" href="%PUBLIC_URL%/nata.jpg" sizes="192x192" />
@@ -23,8 +23,27 @@
     -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Interactive map of Porto" />
+  <meta name="description" content="Porto map of essential and important locations" />
+  <meta name="application-name" content="Porto Map" />
   <title>Porto Map</title>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/" />
+  <meta property="og:title" content="Porto Map" />
+  <meta property="og:description" content="Porto map of essential and important locations" />
+  <meta property="og:image" content="%PUBLIC_URL%/nata.jpg" />
+  <meta property="og:site_name" content="Porto Map" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="/" />
+  <meta property="twitter:title" content="Porto Map" />
+  <meta property="twitter:description" content="Porto map of essential and important locations" />
+  <meta property="twitter:image" content="%PUBLIC_URL%/nata.jpg" />
+
+  <!-- Notion specific -->
+  <meta name="apple-mobile-web-app-title" content="Porto Map" />
 
   <!-- Fix Google Maps "Use two fingers" message -->
   <style>
@@ -44,6 +63,12 @@
       touch-action: manipulation !important;
     }
   </style>
+
+  <!-- Fix for CRA default info -->
+  <script>
+    // Override default React App title that might be cached
+    document.title = "Porto Map";
+  </script>
 
   <script>
     // Override Google Maps gesture handling behavior
