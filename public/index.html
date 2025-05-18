@@ -1,34 +1,28 @@
-<!DOCTYPE html>
-<html lang="en" prefix="og: https://ogp.me/ns#">
-
 <head>
   <meta charset="utf-8" />
-  <!-- Prevent caching -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
 
-  <!-- Critical assets preload -->
-  <link rel="preload" href="%PUBLIC_URL%/nata.jpg" as="image" type="image/jpeg">
-  <link rel="preload" href="%PUBLIC_URL%/porto.jpeg" as="image" type="image/jpeg">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="/nata.jpg" as="image" type="image/jpeg" />
+  <link rel="preload" href="/porto.jpeg" as="image" type="image/jpeg" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Core meta tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="theme-color" content="#000000" />
   <meta name="description"
     content="Porto interactive map showing essential and important locations throughout the city. Find restaurants, shops, landmarks, and transportation to enhance your visit to Porto, Portugal." />
   <meta name="application-name" content="Porto Map" />
 
-  <!-- Favicons and manifest -->
-  <link rel="icon" type="image/jpeg" href="%PUBLIC_URL%/nata.jpg" sizes="192x192" />
-  <link rel="apple-touch-icon" type="image/jpeg" href="%PUBLIC_URL%/nata.jpg" sizes="192x192" />
-  <link rel="image_src" href="https://porto-map.netlify.app/porto.jpeg" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="icon" type="image/jpeg" href="/nata.jpg" sizes="192x192" />
+  <link rel="apple-touch-icon" type="image/jpeg" href="/nata.jpg" sizes="192x192" />
+  <link rel="manifest" href="/manifest.json" />
 
   <title>Porto Map</title>
 
-  <!-- Open Graph Metadata (Facebook, Notion, LinkedIn) -->
+  <!-- Essential Open Graph Tags for Facebook -->
+  <meta property="fb:app_id" content="956606658840308" />
+  <meta property="fb:pages" content="956606658840308" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://porto-map.netlify.app/" />
   <meta property="og:title" content="Porto Map" />
@@ -40,11 +34,8 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Porto Map" />
   <meta property="og:site_name" content="Porto Map" />
-  <meta property="fb:app_id" content="956606658840308" />
-  <meta property="fb:pages" content="956606658840308" />
-  <meta name="facebook-domain-verification" content="porto-map" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://porto-map.netlify.app/" />
   <meta name="twitter:title" content="Porto Map" />
@@ -52,7 +43,7 @@
     content="Porto interactive map showing essential and important locations throughout the city. Find restaurants, shops, landmarks, and transportation to enhance your visit to Porto, Portugal." />
   <meta name="twitter:image" content="https://porto-map.netlify.app/porto.jpeg" />
 
-  <!-- Structured Data (Search Engines) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -63,99 +54,4 @@
       "image": "https://porto-map.netlify.app/porto.jpeg"
     }
   </script>
-
-  <!-- Fix Google Maps "Use two fingers" message -->
-  <style>
-    .gm-style>div>div:last-child>div:not(:empty),
-    .dismissable-toaster {
-      display: none !important;
-    }
-
-    .gm-style,
-    .gm-style * {
-      touch-action: manipulation !important;
-    }
-  </style>
-
-  <!-- Combined JS for performance -->
-  <script>
-    // Set title and update parent frames
-    document.title = "Porto Map";
-
-    function updateParentFrameTitle() {
-      if (window.parent && window.parent !== window) {
-        try {
-          window.parent.postMessage({
-            type: 'metadata',
-            title: 'Porto Map',
-            description: 'Porto interactive map showing essential and important locations throughout the city. Find restaurants, shops, landmarks, and transportation to enhance your visit to Porto, Portugal.',
-            image: 'https://porto-map.netlify.app/porto.jpeg'
-          }, '*');
-        } catch (e) {
-          console.error('Failed to send message to parent', e);
-        }
-      }
-    }
-
-    // Defer non-critical operations
-    function deferredOperations() {
-      // Maps gesture handling
-      window.gmapsGestureHandlingOverride = function () {
-        if (window.google && window.google.maps && window.google.maps.Map && window.google.maps.Map.prototype) {
-          const originalSetOptions = window.google.maps.Map.prototype.setOptions;
-          window.google.maps.Map.prototype.setOptions = function (options) {
-            if (!options) options = {};
-            options.gestureHandling = 'greedy';
-            return originalSetOptions.call(this, options);
-          };
-        }
-      };
-
-      // Fix maps messages
-      const mapsInterval = setInterval(function () {
-        window.gmapsGestureHandlingOverride();
-        document.querySelectorAll('.gm-style > div > div:last-child > div').forEach(el => {
-          if (el.textContent && el.textContent.includes('Use two fingers')) {
-            el.style.display = 'none';
-          }
-        });
-      }, 1000);
-      setTimeout(function () { clearInterval(mapsInterval); }, 10000);
-    }
-
-    // Update title and parent frames immediately
-    updateParentFrameTitle();
-
-    // Combined event listener with performance optimizations
-    window.addEventListener('load', function () {
-      // Update title in frames
-      updateParentFrameTitle();
-      const titleInterval = setInterval(updateParentFrameTitle, 1000);
-      setTimeout(function () { clearInterval(titleInterval); }, 10000);
-
-      // Defer non-critical operations
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(deferredOperations);
-      } else {
-        setTimeout(deferredOperations, 1);
-      }
-    });
-  </script>
 </head>
-
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-  <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-</body>
-
-</html>
