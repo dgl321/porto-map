@@ -8,63 +8,52 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
-  <!-- Favicon for modern browsers -->
-  <link rel="icon" type="image/jpg" href="%PUBLIC_URL%/nata.jpg" sizes="192x192" />
-  <!-- Apple Touch Icon -->
-  <link rel="apple-touch-icon" type="image/jpg" href="%PUBLIC_URL%/nata.jpg" sizes="192x192" />
-  <link rel="image_src" href="https://porto-map.netlify.app/nata.jpg" />
-  <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+  <!-- Core meta tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Porto map of essential and important locations" />
   <meta name="application-name" content="Porto Map" />
+
+  <!-- Favicons and manifest -->
+  <link rel="icon" type="image/jpg" href="%PUBLIC_URL%/nata.jpg" sizes="192x192" />
+  <link rel="apple-touch-icon" type="image/jpg" href="%PUBLIC_URL%/nata.jpg" sizes="192x192" />
+  <link rel="image_src" href="https://porto-map.netlify.app/nata.jpg" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
   <title>Porto Map</title>
 
-  <!-- Primary Open Graph Tags - Updated for Facebook sharing -->
-  <meta property="og:image" content="https://porto-map.netlify.app/nata.jpg" />
+  <!-- Critical Open Graph Tags - Combined for better performance -->
+  <meta property="fb:app_id" content="956606658840308" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://porto-map.netlify.app/" />
   <meta property="og:title" content="Porto Map" />
   <meta property="og:description" content="Porto map of essential and important locations" />
-  <meta property="og:site_name" content="Porto Map" />
-
-  <!-- Additional Open Graph Image Tags -->
+  <meta property="og:image" content="https://porto-map.netlify.app/nata.jpg" />
   <meta property="og:image:url" content="https://porto-map.netlify.app/nata.jpg" />
   <meta property="og:image:secure_url" content="https://porto-map.netlify.app/nata.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="612" />
   <meta property="og:image:height" content="612" />
   <meta property="og:image:alt" content="Porto Map" />
+  <meta property="og:site_name" content="Porto Map" />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://porto-map.netlify.app/" />
-  <meta property="twitter:title" content="Porto Map" />
-  <meta property="twitter:description" content="Porto map of essential and important locations" />
-  <meta property="twitter:image" content="https://porto-map.netlify.app/nata.jpg" />
+  <!-- Twitter Card - Minimal required tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://porto-map.netlify.app/" />
+  <meta name="twitter:title" content="Porto Map" />
+  <meta name="twitter:description" content="Porto map of essential and important locations" />
+  <meta name="twitter:image" content="https://porto-map.netlify.app/nata.jpg" />
 
-  <!-- Enhanced Notion-specific meta tags -->
+  <!-- Notion specific tags -->
   <meta name="notion:title" content="Porto Map" />
   <meta name="notion:image" content="https://porto-map.netlify.app/nata.jpg" />
   <meta name="notion:description" content="Porto map of essential and important locations" />
-  <!-- Additional tags that Notion might use -->
-  <meta property="og:image:notion" content="https://porto-map.netlify.app/nata.jpg" />
-  <meta name="thumbnail" content="https://porto-map.netlify.app/nata.jpg" />
-  <link rel="icon" type="image/jpg" href="https://porto-map.netlify.app/nata.jpg" />
-  <!-- Force image in schema.org format that Notion may understand -->
+
+  <!-- Apple specific tags -->
+  <meta name="apple-mobile-web-app-title" content="Porto Map" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <!-- Single structured data block for search engines -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -76,39 +65,30 @@
     }
   </script>
 
-  <!-- iOS specific -->
-  <meta name="apple-mobile-web-app-title" content="Porto Map" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-
   <!-- Fix Google Maps "Use two fingers" message -->
   <style>
-    /* Hide Google Maps "Use two fingers" message */
     .gm-style>div>div:last-child>div:not(:empty) {
       display: none !important;
     }
 
-    /* Hide the "For improved scrolling..." tooltip */
     .dismissable-toaster {
       display: none !important;
     }
 
-    /* Extra styles to ensure touch handling works properly */
     .gm-style,
     .gm-style * {
       touch-action: manipulation !important;
     }
   </style>
 
-  <!-- Fix for CRA default info -->
+  <!-- Combined JS for performance -->
   <script>
-    // Set title aggressively
+    // Set title and update parent frames
     document.title = "Porto Map";
 
-    // Try to update parent frame's title (for embedded views)
     function updateParentFrameTitle() {
       if (window.parent && window.parent !== window) {
         try {
-          // Send message to parent frame with correct title
           window.parent.postMessage({
             type: 'metadata',
             title: 'Porto Map',
@@ -121,63 +101,40 @@
       }
     }
 
-    // Run immediately
-    updateParentFrameTitle();
+    // Maps gesture handling
+    window.gmapsGestureHandlingOverride = function () {
+      if (window.google && window.google.maps && window.google.maps.Map && window.google.maps.Map.prototype) {
+        const originalSetOptions = window.google.maps.Map.prototype.setOptions;
+        window.google.maps.Map.prototype.setOptions = function (options) {
+          if (!options) options = {};
+          options.gestureHandling = 'greedy';
+          return originalSetOptions.call(this, options);
+        };
+      }
+    };
 
-    // And again when page loads
+    // Combined event listener
     window.addEventListener('load', function () {
+      // Update title in frames
       document.title = "Porto Map";
       updateParentFrameTitle();
-
-      // Keep trying every second for 10 seconds
       const titleInterval = setInterval(function () {
         document.title = "Porto Map";
         updateParentFrameTitle();
       }, 1000);
+      setTimeout(function () { clearInterval(titleInterval); }, 10000);
 
-      setTimeout(function () {
-        clearInterval(titleInterval);
-      }, 10000);
-    });
-  </script>
-
-  <script>
-    // Override Google Maps gesture handling behavior
-    window.gmapsGestureHandlingOverride = function () {
-      if (window.google && window.google.maps) {
-        // Try to modify the Maps API directly
-        if (window.google.maps.Map && window.google.maps.Map.prototype) {
-          const originalSetOptions = window.google.maps.Map.prototype.setOptions;
-          window.google.maps.Map.prototype.setOptions = function (options) {
-            if (!options) options = {};
-            options.gestureHandling = 'greedy';
-            return originalSetOptions.call(this, options);
-          };
-        }
-      }
-    };
-
-    // Set up a MutationObserver to hide the "Use two fingers" message
-    window.addEventListener('load', function () {
-      // Try to execute the gesture handling override
+      // Fix maps
       window.gmapsGestureHandlingOverride();
-
-      // Repeatedly try to apply the override
-      const intervalId = setInterval(function () {
+      const mapsInterval = setInterval(function () {
         window.gmapsGestureHandlingOverride();
-
-        // Hide any "Use two fingers" messages
         document.querySelectorAll('.gm-style > div > div:last-child > div').forEach(el => {
           if (el.textContent && el.textContent.includes('Use two fingers')) {
             el.style.display = 'none';
           }
         });
       }, 1000);
-
-      // Stop trying after 10 seconds
-      setTimeout(function () {
-        clearInterval(intervalId);
-      }, 10000);
+      setTimeout(function () { clearInterval(mapsInterval); }, 10000);
     });
   </script>
 </head>
