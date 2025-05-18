@@ -56,10 +56,25 @@
   <meta property="twitter:description" content="Porto map of essential and important locations" />
   <meta property="twitter:image" content="https://porto-map.netlify.app/nata.jpg" />
 
-  <!-- Notion specific meta (experimental) -->
+  <!-- Enhanced Notion-specific meta tags -->
   <meta name="notion:title" content="Porto Map" />
   <meta name="notion:image" content="https://porto-map.netlify.app/nata.jpg" />
   <meta name="notion:description" content="Porto map of essential and important locations" />
+  <!-- Additional tags that Notion might use -->
+  <meta property="og:image:notion" content="https://porto-map.netlify.app/nata.jpg" />
+  <meta name="thumbnail" content="https://porto-map.netlify.app/nata.jpg" />
+  <link rel="icon" type="image/jpg" href="https://porto-map.netlify.app/nata.jpg" />
+  <!-- Force image in schema.org format that Notion may understand -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Porto Map",
+      "description": "Porto map of essential and important locations",
+      "url": "https://porto-map.netlify.app/",
+      "image": "https://porto-map.netlify.app/nata.jpg"
+    }
+  </script>
 
   <!-- iOS specific -->
   <meta name="apple-mobile-web-app-title" content="Porto Map" />
