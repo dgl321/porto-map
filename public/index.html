@@ -21,40 +21,30 @@
   <meta name="application-name" content="Porto Map" />
 
   <!-- Favicons and manifest -->
-  <link rel="icon" type="image/jpg" href="%PUBLIC_URL%/nata.jpg" sizes="192x192" />
-  <link rel="apple-touch-icon" type="image/jpg" href="%PUBLIC_URL%/nata.jpg" sizes="192x192" />
+  <link rel="icon" type="image/jpeg" href="%PUBLIC_URL%/nata.jpg" sizes="192x192" />
+  <link rel="apple-touch-icon" type="image/jpeg" href="%PUBLIC_URL%/nata.jpg" sizes="192x192" />
   <link rel="image_src" href="https://porto-map.netlify.app/porto.jpeg" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
   <title>Porto Map</title>
 
-  <!-- Facebook Open Graph Image - Explicitly provided first -->
-  <meta property="og:image" content="https://porto-map.netlify.app/porto.jpeg" />
-
-  <!-- Critical Open Graph Tags -->
-  <meta property="fb:app_id" content="956606658840308" />
-  <meta property="fb:pages" content="956606658840308" />
+  <!-- Open Graph Metadata (Facebook, Notion, LinkedIn) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://porto-map.netlify.app/" />
   <meta property="og:title" content="Porto Map" />
   <meta property="og:description"
     content="Porto interactive map showing essential and important locations throughout the city. Find restaurants, shops, landmarks, and transportation to enhance your visit to Porto, Portugal." />
-  <meta property="og:image:url" content="https://porto-map.netlify.app/porto.jpeg" />
-  <meta property="og:image:secure_url" content="https://porto-map.netlify.app/porto.jpeg" />
+  <meta property="og:image" content="https://porto-map.netlify.app/porto.jpeg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Porto Map" />
   <meta property="og:site_name" content="Porto Map" />
+  <meta property="fb:app_id" content="956606658840308" />
+  <meta property="fb:pages" content="956606658840308" />
+  <meta name="facebook-domain-verification" content="porto-map" />
 
-  <!-- LinkedIn specific tags -->
-  <meta property="linkedin:card" content="summary_large_image" />
-  <meta property="linkedin:title" content="Porto Map" />
-  <meta property="linkedin:description"
-    content="Porto interactive map showing essential and important locations throughout the city. Find restaurants, shops, landmarks, and transportation to enhance your visit to Porto, Portugal." />
-  <meta property="linkedin:image" content="https://porto-map.netlify.app/porto.jpeg" />
-
-  <!-- Twitter Card - Minimal required tags -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://porto-map.netlify.app/" />
   <meta name="twitter:title" content="Porto Map" />
@@ -62,20 +52,7 @@
     content="Porto interactive map showing essential and important locations throughout the city. Find restaurants, shops, landmarks, and transportation to enhance your visit to Porto, Portugal." />
   <meta name="twitter:image" content="https://porto-map.netlify.app/porto.jpeg" />
 
-  <!-- Notion specific tags -->
-  <meta name="notion:title" content="Porto Map" />
-  <meta name="notion:image" content="https://porto-map.netlify.app/porto.jpeg" />
-  <meta name="notion:description"
-    content="Porto interactive map showing essential and important locations throughout the city. Find restaurants, shops, landmarks, and transportation to enhance your visit to Porto, Portugal." />
-
-  <!-- Apple specific tags -->
-  <meta name="apple-mobile-web-app-title" content="Porto Map" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-
-  <!-- Add headers for Facebook crawler -->
-  <meta name="facebook-domain-verification" content="porto-map" />
-
-  <!-- Single structured data block for search engines -->
+  <!-- Structured Data (Search Engines) -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -89,10 +66,7 @@
 
   <!-- Fix Google Maps "Use two fingers" message -->
   <style>
-    .gm-style>div>div:last-child>div:not(:empty) {
-      display: none !important;
-    }
-
+    .gm-style>div>div:last-child>div:not(:empty),
     .dismissable-toaster {
       display: none !important;
     }
