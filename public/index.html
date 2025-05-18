@@ -8,6 +8,10 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
+  <!-- Critical assets preload -->
+  <link rel="preload" href="%PUBLIC_URL%/nata.jpg" as="image" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <!-- Core meta tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="theme-color" content="#000000" />
@@ -105,31 +109,21 @@
       }
     }
 
-    // Maps gesture handling
-    window.gmapsGestureHandlingOverride = function () {
-      if (window.google && window.google.maps && window.google.maps.Map && window.google.maps.Map.prototype) {
-        const originalSetOptions = window.google.maps.Map.prototype.setOptions;
-        window.google.maps.Map.prototype.setOptions = function (options) {
-          if (!options) options = {};
-          options.gestureHandling = 'greedy';
-          return originalSetOptions.call(this, options);
-        };
-      }
-    };
+    // Defer non-critical operations
+    function deferredOperations() {
+      // Maps gesture handling
+      window.gmapsGestureHandlingOverride = function () {
+        if (window.google && window.google.maps && window.google.maps.Map && window.google.maps.Map.prototype) {
+          const originalSetOptions = window.google.maps.Map.prototype.setOptions;
+          window.google.maps.Map.prototype.setOptions = function (options) {
+            if (!options) options = {};
+            options.gestureHandling = 'greedy';
+            return originalSetOptions.call(this, options);
+          };
+        }
+      };
 
-    // Combined event listener
-    window.addEventListener('load', function () {
-      // Update title in frames
-      document.title = "Porto Map";
-      updateParentFrameTitle();
-      const titleInterval = setInterval(function () {
-        document.title = "Porto Map";
-        updateParentFrameTitle();
-      }, 1000);
-      setTimeout(function () { clearInterval(titleInterval); }, 10000);
-
-      // Fix maps
-      window.gmapsGestureHandlingOverride();
+      // Fix maps messages
       const mapsInterval = setInterval(function () {
         window.gmapsGestureHandlingOverride();
         document.querySelectorAll('.gm-style > div > div:last-child > div').forEach(el => {
@@ -139,6 +133,24 @@
         });
       }, 1000);
       setTimeout(function () { clearInterval(mapsInterval); }, 10000);
+    }
+
+    // Update title and parent frames immediately
+    updateParentFrameTitle();
+
+    // Combined event listener with performance optimizations
+    window.addEventListener('load', function () {
+      // Update title in frames
+      updateParentFrameTitle();
+      const titleInterval = setInterval(updateParentFrameTitle, 1000);
+      setTimeout(function () { clearInterval(titleInterval); }, 10000);
+
+      // Defer non-critical operations
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(deferredOperations);
+      } else {
+        setTimeout(deferredOperations, 1);
+      }
     });
   </script>
 </head>
