@@ -11,7 +11,7 @@
   <!-- Critical assets preload -->
   <link rel="preload" href="https://porto-map.netlify.app/nata.jpg" as="image" type="image/jpeg">
   <link rel="preload" href="https://porto-map.netlify.app/porto.jpeg" as="image" type="image/jpeg">
-  <link rel="preconnect" href="https://fonts.gstati.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Core meta tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -28,7 +28,13 @@
 
   <title>Porto Map</title>
 
-  <!-- Open Graph Metadata (Facebook, Notion, LinkedIn) -->
+  <!-- Notion Specific Meta Tags -->
+  <meta name="notion:title" content="Porto Map" />
+  <meta name="notion:description"
+    content="Porto interactive map showing essential and important locations throughout the city. Find restaurants, shops, landmarks, and transportation to enhance your visit to Porto, Portugal." />
+  <meta name="notion:image" content="https://porto-map.netlify.app/porto.jpeg" />
+
+  <!-- Open Graph Metadata (Facebook, LinkedIn) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://porto-map.netlify.app/" />
   <meta property="og:title" content="Porto Map" />
