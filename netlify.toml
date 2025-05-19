@@ -3,4 +3,29 @@
   publish = "build"
 
 [build.environment]
-  CI = "false" 
+  CI = "false"
+  NODE_ENV = "production"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com 'unsafe-inline' 'unsafe-eval'; img-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com data:; font-src 'self' https://fonts.gstatic.com data:;"
+
+[[headers]]
+  for = "/static/js/*"
+    [headers.values]
+    Content-Type = "application/javascript"
+
+[[headers]]
+  for = "/static/css/*"
+    [headers.values]
+    Content-Type = "text/css" 

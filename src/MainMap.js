@@ -48,8 +48,9 @@ function MainMap() {
                 googleMapsApiKey={apiKey}
                 region="ie"
                 language="en"
-                version="weekly"
+                version="3.52"
                 onLoad={() => console.log("Maps API loaded successfully")}
+                onError={(error) => console.error("Maps API failed to load:", error)}
             >
                 <GoogleMap
                     mapContainerStyle={mapContainerStyle}
