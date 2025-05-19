@@ -2,159 +2,62 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <!-- Prevent caching -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-
-  <!-- Critical assets preload -->
-  <link rel="preload" href="https://porto-map.netlify.app/nata.jpg" as="image" type="image/jpeg" />
-  <link rel="preload" href="https://porto-map.netlify.app/porto.jpeg" as="image" type="image/jpeg" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Core meta tags -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description"
-    content="Discover Porto's hidden gems with our interactive map! Find the best restaurants, shops, landmarks, and transportation options throughout this beautiful Portuguese city. Perfect for tourists and locals alike." />
-  <meta name="application-name" content="Porto Map" />
-
-  <!-- Favicons and manifest -->
-  <link rel="icon" type="image/jpeg" href="%PUBLIC_URL%/nata.jpg" sizes="192x192" />
-  <link rel="apple-touch-icon" type="image/jpeg" href="%PUBLIC_URL%/nata.jpg" sizes="192x192" />
-  <link rel="image_src" href="https://porto-map.netlify.app/porto.jpeg" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
-  <title>Porto Map</title>
-
-  <!-- Notion Specific Meta Tags -->
-  <meta name="notion:title" content="Porto Map" />
-  <meta name="notion:description"
-    content="Discover Porto's hidden gems with our interactive map! Find the best restaurants, shops, landmarks, and transportation options throughout this beautiful Portuguese city. Perfect for tourists and locals alike." />
-  <meta name="notion:image" content="https://porto-map.netlify.app/porto.jpeg" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta charset="utf-8">
+  <link rel="icon" type="image/jpg" href="/nata.jpg" sizes="192x192">
+  <link rel="apple-touch-icon" type="image/jpg" href="/nata.jpg" sizes="192x192">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Interactive map of Porto">
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://porto-map.netlify.app/" />
-  <meta property="og:title" content="Porto Map" />
-  <meta property="og:description" content="Discover Porto's hidden gems with our interactive map! Find the best restaurants, shops, landmarks, and transportation options throughout this beautiful Portuguese city. Perfect for tourists and locals alike." />
-  <meta property="og:image" content="https://porto-map.netlify.app/porto.jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Porto Map" />
-  <meta property="og:site_name" content="Porto Map" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:determiner" content="the" />
-
-  <!-- LinkedIn -->
-  <meta name="linkedin:card" content="summary_large_image" />
-  <meta name="linkedin:title" content="Porto Map" />
-  <meta name="linkedin:description" content="Discover Porto's hidden gems with our interactive map! Find the best restaurants, shops, landmarks, and transportation options throughout this beautiful Portuguese city. Perfect for tourists and locals alike." />
-  <meta name="linkedin:image" content="https://porto-map.netlify.app/porto.jpeg" />
-  <meta name="linkedin:image:width" content="1200" />
-  <meta name="linkedin:image:height" content="630" />
-  <meta name="linkedin:url" content="https://porto-map.netlify.app/" />
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://porto-map.netlify.app/">
+  <meta property="og:title" content="Porto Map">
+  <meta property="og:description" content="Interactive map of Porto">
+  <meta property="og:image" content="https://porto-map.netlify.app/porto.jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Porto Map">
+  <meta property="og:site_name" content="Porto Map">
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@portomap" />
-  <meta name="twitter:creator" content="@portomap" />
-  <meta name="twitter:url" content="https://porto-map.netlify.app/" />
-  <meta name="twitter:title" content="Porto Map" />
-  <meta name="twitter:description" content="Discover Porto's hidden gems with our interactive map! Find the best restaurants, shops, landmarks, and transportation options throughout this beautiful Portuguese city. Perfect for tourists and locals alike." />
-  <meta name="twitter:image" content="https://porto-map.netlify.app/porto.jpeg" />
-  <meta name="twitter:image:alt" content="Porto Map" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://porto-map.netlify.app/">
+  <meta name="twitter:title" content="Porto Map">
+  <meta name="twitter:description" content="Interactive map of Porto">
+  <meta name="twitter:image" content="https://porto-map.netlify.app/porto.jpeg">
 
-  <!-- Structured Data (Search Engines) -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Porto Map",
-      "description": "Discover Porto's hidden gems with our interactive map! Find the best restaurants, shops, landmarks, and transportation options throughout this beautiful Portuguese city. Perfect for tourists and locals alike.",
-      "url": "https://porto-map.netlify.app/",
-      "image": "https://porto-map.netlify.app/porto.jpeg"
+  <title>Porto Map</title>
+  <style>.gm-style>div>div:last-child>div:not(:empty){display:none!important}.dismissable-toaster{display:none!important}.gm-style,.gm-style *{touch-action:manipulation!important}</style>
+  <link href="/static/css/main.e0d099dc.css" rel="stylesheet">
+  <style type="text/css">
+    /* Force gesture handling to work correctly */
+    .gm-control-active, .gm-style, .gm-style-iw, .gm-bundled-control, .gm-bundled-control-on-bottom {
+      touch-action: none !important;
     }
-  </script>
-
-  <!-- Fix Google Maps "Use two fingers" message -->
-  <style>
-    .gm-style>div>div:last-child>div:not(:empty),
-    .dismissable-toaster {
+    
+    /* Override Google's two finger warning */
+    .gm-style > div:first-child > div:nth-child(4) > div:nth-child(4) {
       display: none !important;
     }
-
-    .gm-style,
-    .gm-style * {
-      touch-action: manipulation !important;
+    
+    /* Hide the "For improved scrolling" tooltip */
+    .gm-style > div:first-child > div:last-child > div:last-child {
+      display: none !important;
+    }
+    
+    /* Hide "Use two fingers to move the map" message completely */
+    .gm-style > div:first-child > div:last-child > div:nth-child(1):not(:empty) {
+      display: none !important;
+    }
+    
+    /* Enable smoother touch scrolling */
+    .gm-style {
+      -webkit-overflow-scrolling: touch;
     }
   </style>
-
-  <!-- Combined JS for performance -->
-  <script>
-    // Set title and update parent frames
-    document.title = "Porto Map";
-
-    function updateParentFrameTitle() {
-      if (window.parent && window.parent !== window) {
-        try {
-          window.parent.postMessage({
-            type: 'metadata',
-            title: 'Porto Map',
-            description: 'Porto interactive map showing essential and important locations throughout the city. Find restaurants, shops, landmarks, and transportation to enhance your visit to Porto, Portugal.',
-            image: 'https://porto-map.netlify.app/porto.jpeg'
-          }, '*');
-        } catch (e) {
-          console.error('Failed to send message to parent', e);
-        }
-      }
-    }
-
-    // Defer non-critical operations
-    function deferredOperations() {
-      // Maps gesture handling
-      window.gmapsGestureHandlingOverride = function () {
-        if (window.google && window.google.maps && window.google.maps.Map && window.google.maps.Map.prototype) {
-          const originalSetOptions = window.google.maps.Map.prototype.setOptions;
-          window.google.maps.Map.prototype.setOptions = function (options) {
-            if (!options) options = {};
-            options.gestureHandling = 'greedy';
-            return originalSetOptions.call(this, options);
-          };
-        }
-      };
-
-      // Fix maps messages
-      const mapsInterval = setInterval(function () {
-        window.gmapsGestureHandlingOverride();
-        document.querySelectorAll('.gm-style > div > div:last-child > div').forEach(el => {
-          if (el.textContent && el.textContent.includes('Use two fingers')) {
-            el.style.display = 'none';
-          }
-        });
-      }, 1000);
-      setTimeout(function () { clearInterval(mapsInterval); }, 10000);
-    }
-
-    // Update title and parent frames immediately
-    updateParentFrameTitle();
-
-    // Combined event listener with performance optimizations
-    window.addEventListener('load', function () {
-      // Update title in frames
-      updateParentFrameTitle();
-      const titleInterval = setInterval(updateParentFrameTitle, 1000);
-      setTimeout(function () { clearInterval(titleInterval); }, 10000);
-
-      // Defer non-critical operations
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(deferredOperations);
-      } else {
-        setTimeout(deferredOperations, 1);
-      }
-    });
-  </script>
 </head>
 
 <body>
