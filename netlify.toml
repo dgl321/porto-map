@@ -10,6 +10,15 @@
   from = "/*"
   to = "/index.html"
   status = 200
+  force = true
+  conditions = {Path = ["/"]}
+
+[[headers]]
+  for = "/index.html"
+    [headers.values]
+    Content-Type = "text/html; charset=utf-8"
+    Cache-Control = "no-cache"
+    X-Robots-Tag = "noindex, nofollow"
 
 [[headers]]
   for = "/*"
