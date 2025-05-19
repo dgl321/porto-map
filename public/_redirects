@@ -1,1 +1,16 @@
-/* /index.html 200 
+# Handle social media crawlers
+/  /index.html  200
+/* /index.html  200
+
+# Force prerendering for social media crawlers
+User-Agent: facebookexternalhit
+  Prerender: true
+
+User-Agent: Twitterbot
+  Prerender: true
+
+User-Agent: LinkedInBot
+  Prerender: true
+
+User-Agent: LinkedInBot/1.0
+  Prerender: true 
