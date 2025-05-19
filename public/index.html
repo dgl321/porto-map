@@ -21,6 +21,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Porto Map">
   <meta property="og:site_name" content="Porto Map">
+  <meta property="og:logo" content="https://porto-map.netlify.app/nata.jpg">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -30,29 +31,46 @@
   <meta name="twitter:image" content="https://porto-map.netlify.app/porto.jpeg">
 
   <title>Porto Map</title>
-  <style>.gm-style>div>div:last-child>div:not(:empty){display:none!important}.dismissable-toaster{display:none!important}.gm-style,.gm-style *{touch-action:manipulation!important}</style>
+  <style>
+    .gm-style>div>div:last-child>div:not(:empty) {
+      display: none !important
+    }
+
+    .dismissable-toaster {
+      display: none !important
+    }
+
+    .gm-style,
+    .gm-style * {
+      touch-action: manipulation !important
+    }
+  </style>
   <link href="/static/css/main.e0d099dc.css" rel="stylesheet">
   <style type="text/css">
     /* Force gesture handling to work correctly */
-    .gm-control-active, .gm-style, .gm-style-iw, .gm-bundled-control, .gm-bundled-control-on-bottom {
+    .gm-control-active,
+    .gm-style,
+    .gm-style-iw,
+    .gm-bundled-control,
+    .gm-bundled-control-on-bottom {
       touch-action: none !important;
     }
-    
+
     /* Override Google's two finger warning */
-    .gm-style > div:first-child > div:nth-child(4) > div:nth-child(4) {
+    .gm-style>div:first-child>div:nth-child(4)>div:nth-child(4) {
       display: none !important;
     }
-    
+
     /* Hide the "For improved scrolling" tooltip */
-    .gm-style > div:first-child > div:last-child > div:last-child {
+    .gm-style>div:first-child>div:last-child>div:last-child {
       display: none !important;
     }
-    
+
     /* Hide "Use two fingers to move the map" message completely */
-    .gm-style > div:first-child > div:last-child > div:nth-child(1):not(:empty) {
+    .gm-style>div:first-child>div:last-child>div:nth-child(1):not(:empty) {
       display: none !important;
     }
-    
+
     /* Enable smoother touch scrolling */
     .gm-style {
       -webkit-overflow-scrolling: touch;
