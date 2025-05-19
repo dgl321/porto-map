@@ -18,8 +18,8 @@ export default async (request, context) => {
       <meta property="og:url" content="https://porto-map.netlify.app/">
       <meta property="og:title" content="Porto Map">
       <meta property="og:description" content="Interactive map of Porto">
-      <meta property="og:image" content="https://porto-map.netlify.app/porto.webp">
-      <meta property="og:image:type" content="image/webp">
+      <meta property="og:image" content="https://porto-map.netlify.app/porto.jpeg">
+      <meta property="og:image:type" content="image/jpeg">
       <meta property="og:image:width" content="1200">
       <meta property="og:image:height" content="630">
       <meta property="og:image:alt" content="Porto Map">
@@ -28,7 +28,7 @@ export default async (request, context) => {
       <meta name="twitter:url" content="https://porto-map.netlify.app/">
       <meta name="twitter:title" content="Porto Map">
       <meta name="twitter:description" content="Interactive map of Porto">
-      <meta name="twitter:image" content="https://porto-map.netlify.app/porto.webp">
+      <meta name="twitter:image" content="https://porto-map.netlify.app/porto.jpeg">
     `;
     
     html = html.replace('</head>', `${metaTags}</head>`);
