@@ -6,3 +6,12 @@
   Content-Type: text/html; charset=utf-8
   Cache-Control: public, max-age=3600
   Permissions-Policy: interest-cohort=()
+
+# Specific headers for social media crawlers
+/porto.jpeg
+  Content-Type: image/jpeg
+  Cache-Control: public, max-age=86400
+
+# Allow embedding in social media platforms
+/*
+  frame-ancestors 'self' https://*.facebook.com https://*.linkedin.com https://*.twitter.com
