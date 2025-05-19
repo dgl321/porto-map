@@ -7,22 +7,6 @@
   Content-Type: text/html; charset=utf-8
   Cache-Control: public, max-age=3600
   Permissions-Policy: interest-cohort=()
-  Link: </porto.webp>; rel=preload; as=image
-  X-Meta-og:type: website
-  X-Meta-og:url: https://porto-map.netlify.app/
-  X-Meta-og:title: Porto Map
-  X-Meta-og:description: Interactive map of Porto
-  X-Meta-og:image: https://porto-map.netlify.app/porto.webp
-  X-Meta-og:image:type: image/webp
-  X-Meta-og:image:width: 1200
-  X-Meta-og:image:height: 630
-  X-Meta-og:image:alt: Porto Map
-  X-Meta-og:site_name: Porto Map
-  X-Meta-twitter:card: summary_large_image
-  X-Meta-twitter:url: https://porto-map.netlify.app/
-  X-Meta-twitter:title: Porto Map
-  X-Meta-twitter:description: Interactive map of Porto
-  X-Meta-twitter:image: https://porto-map.netlify.app/porto.webp
 
 # Specific headers for social media crawlers
 /porto.jpeg
@@ -31,7 +15,6 @@
   Access-Control-Allow-Origin: *
   X-Content-Type-Options: nosniff
   X-Frame-Options: ALLOWALL
-  Content-Security-Policy: default-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com 'unsafe-inline' 'unsafe-eval'; img-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com data:; font-src 'self' https://fonts.gstatic.com data:;
 
 # Allow embedding in social media platforms
 /*
