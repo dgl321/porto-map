@@ -6,6 +6,10 @@
   CI = "false"
   NODE_ENV = "production"
 
+[[edge_functions]]
+  path = "/*"
+  function = "inject-meta"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
