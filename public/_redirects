@@ -3,20 +3,11 @@
 /*  /index.html  200
 
 # Facebook crawler
-/  /index.html  200
-  User-Agent: facebookexternalhit
-  Prerender: true
+/  /index.html  200  User-Agent=facebookexternalhit  Prerender=true
 
 # Twitter crawler
-/  /index.html  200
-  User-Agent: Twitterbot
-  Prerender: true
+/  /index.html  200  User-Agent=Twitterbot  Prerender=true
 
 # LinkedIn crawlers
-/  /index.html  200
-  User-Agent: LinkedInBot
-  Prerender: true
-
-/  /index.html  200
-  User-Agent: LinkedInBot/1.0
-  Prerender: true 
+/  /index.html  200  User-Agent=LinkedInBot  Prerender=true
+/  /index.html  200  User-Agent=LinkedInBot/1.0  Prerender=true 
