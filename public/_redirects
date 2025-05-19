@@ -1,20 +1,22 @@
-# Handle social media crawlers
+# Redirect rules for social media crawlers
 /  /index.html  200
-/* /index.html  200
+/*  /index.html  200
 
-# Force prerendering for social media crawlers
-User-Agent: facebookexternalhit
+# Facebook crawler
+/  /index.html  200
+  User-Agent: facebookexternalhit
   Prerender: true
-  X-Frame-Options: ALLOW-FROM https://www.facebook.com/
 
-User-Agent: Twitterbot
+# Twitter crawler
+/  /index.html  200
+  User-Agent: Twitterbot
   Prerender: true
-  X-Frame-Options: ALLOW-FROM https://twitter.com/
 
-User-Agent: LinkedInBot
+# LinkedIn crawlers
+/  /index.html  200
+  User-Agent: LinkedInBot
   Prerender: true
-  X-Frame-Options: ALLOW-FROM https://www.linkedin.com/
 
-User-Agent: LinkedInBot/1.0
-  Prerender: true
-  X-Frame-Options: ALLOW-FROM https://www.linkedin.com/ 
+/  /index.html  200
+  User-Agent: LinkedInBot/1.0
+  Prerender: true 
