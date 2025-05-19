@@ -18,7 +18,7 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com 'unsafe-inline' 'unsafe-eval'; img-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com data:; font-src 'self' https://fonts.gstatic.com data:;"
+    Content-Security-Policy = "default-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com 'unsafe-inline' 'unsafe-eval'; img-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com https://porto-map.netlify.app data:; font-src 'self' https://fonts.gstatic.com data:;"
 
 [[headers]]
   for = "/static/js/*"
@@ -28,4 +28,16 @@
 [[headers]]
   for = "/static/css/*"
     [headers.values]
-    Content-Type = "text/css" 
+    Content-Type = "text/css"
+
+[[headers]]
+  for = "/*.jpeg"
+    [headers.values]
+    Content-Type = "image/jpeg"
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.jpg"
+    [headers.values]
+    Content-Type = "image/jpeg"
+    Cache-Control = "public, max-age=31536000" 
