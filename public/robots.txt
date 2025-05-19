@@ -1,11 +1,25 @@
 # https://www.robotstxt.org/robotstxt.html
+# Allow all crawlers
 User-agent: *
-Disallow:
+Allow: /
 
-# Allow Facebook crawler
+# Specifically allow Facebook's crawler
 User-agent: facebookexternalhit
 Allow: /
 
-# Allow Facebook crawler (alternative syntax)
-User-agent: facebookexternalhit/1.1
+# Allow Twitter's crawler
+User-agent: Twitterbot
 Allow: /
+
+# Allow LinkedIn's crawlers
+User-agent: LinkedInBot
+Allow: /
+User-agent: LinkedInBot/1.0
+Allow: /
+
+# Allow Google's crawler
+User-agent: Googlebot
+Allow: /
+
+# Sitemap location
+Sitemap: https://porto-map.netlify.app/sitemap.xml
