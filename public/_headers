@@ -8,14 +8,21 @@
   Cache-Control: public, max-age=3600
   Permissions-Policy: interest-cohort=()
 
-# Specific headers for images
+# Facebook crawler specific rules
+/porto.jpeg
+  Content-Type: image/jpeg
+  Cache-Control: public, max-age=86400
+  Access-Control-Allow-Origin: *
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: ALLOWALL
+
+# General image rules
 /*.jpeg
   Content-Type: image/jpeg
   Cache-Control: public, max-age=86400
   Access-Control-Allow-Origin: *
   X-Content-Type-Options: nosniff
   X-Frame-Options: ALLOWALL
-  Content-Security-Policy: default-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com 'unsafe-inline' 'unsafe-eval'; img-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com data:; font-src 'self' https://fonts.gstatic.com data:;
 
 /*.jpg
   Content-Type: image/jpeg
@@ -23,20 +30,6 @@
   Access-Control-Allow-Origin: *
   X-Content-Type-Options: nosniff
   X-Frame-Options: ALLOWALL
-  Content-Security-Policy: default-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com 'unsafe-inline' 'unsafe-eval'; img-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com data:; font-src 'self' https://fonts.gstatic.com data:;
-
-# Specific headers for social media crawlers
-/porto.jpeg
-  Content-Type: image/jpeg
-  Cache-Control: public, max-age=86400
-  Access-Control-Allow-Origin: *
-  X-Content-Type-Options: nosniff
-  X-Frame-Options: ALLOWALL
-  Content-Security-Policy: default-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com 'unsafe-inline' 'unsafe-eval'; img-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com data:; font-src 'self' https://fonts.gstatic.com data:;
-
-# Allow embedding in social media platforms
-/*
-  frame-ancestors 'self' https://*.facebook.com https://*.linkedin.com https://*.twitter.com
 
 /static/js/*
   Content-Type: application/javascript
