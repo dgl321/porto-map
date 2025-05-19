@@ -87,6 +87,7 @@ function App() {
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Porto Map" />
         <meta property="og:site_name" content="Porto Map" />
+        <meta property="og:logo" content="https://porto-map.netlify.app/nata.jpg" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://porto-map.netlify.app/" />
