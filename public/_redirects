@@ -5,12 +5,16 @@
 # Force prerendering for social media crawlers
 User-Agent: facebookexternalhit
   Prerender: true
+  X-Frame-Options: ALLOW-FROM https://www.facebook.com/
 
 User-Agent: Twitterbot
   Prerender: true
+  X-Frame-Options: ALLOW-FROM https://twitter.com/
 
 User-Agent: LinkedInBot
   Prerender: true
+  X-Frame-Options: ALLOW-FROM https://www.linkedin.com/
 
 User-Agent: LinkedInBot/1.0
-  Prerender: true 
+  Prerender: true
+  X-Frame-Options: ALLOW-FROM https://www.linkedin.com/ 
