@@ -105,7 +105,7 @@ function Food() {
                 <GoogleMap
                     mapContainerStyle={mapContainerStyle}
                     center={PORTO_CENTER}
-                    zoom={15}
+                    zoom={16}
                     onLoad={onLoad}
                     gestureHandling="greedy"
                     options={{

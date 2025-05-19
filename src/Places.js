@@ -82,7 +82,13 @@ function Places() {
     const [showLegend, setShowLegend] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [map, setMap] = useState(null);
+    
+    // More detailed API key logging
     const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+    console.log('Environment:', process.env.NODE_ENV);
+    console.log('API Key exists:', !!apiKey);
+    console.log('API Key length:', apiKey ? apiKey.length : 0);
+    console.log('API Key first 4 chars:', apiKey ? apiKey.substring(0, 4) : 'none');
 
     // Get all unique categories
     const categories = ['All', ...Object.keys(ICONS).filter(cat => cat !== 'default')];
@@ -120,7 +126,7 @@ function Places() {
                 <GoogleMap
                     mapContainerStyle={mapContainerStyle}
                     center={PORTO_CENTER}
-                    zoom={14}
+                    zoom={16}
                     gestureHandling="greedy"
                     onLoad={onLoad}
                     options={{
