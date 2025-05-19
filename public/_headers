@@ -1,5 +1,6 @@
 /*
-  X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: default-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com 'unsafe-inline' 'unsafe-eval'; img-src 'self' https://*.googleapis.com https://*.gstatic.com https://*.google.com data:; font-src 'self' https://fonts.gstatic.com data:;
+  X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
@@ -15,3 +16,9 @@
 # Allow embedding in social media platforms
 /*
   frame-ancestors 'self' https://*.facebook.com https://*.linkedin.com https://*.twitter.com
+
+/static/js/*
+  Content-Type: application/javascript
+
+/static/css/*
+  Content-Type: text/css
